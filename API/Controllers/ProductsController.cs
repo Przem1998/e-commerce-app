@@ -13,9 +13,8 @@ using AutoMapper;
 namespace API.Controllers
 {
 
-    [ApiController]
-    [Route("api/[controller]")]
-    public class ProductsController : ControllerBase
+
+    public class ProductsController : BaseAPIController
     {
 
          private readonly IGenericRepository<Product> _productsRepository;
