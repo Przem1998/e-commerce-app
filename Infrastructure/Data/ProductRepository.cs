@@ -22,7 +22,7 @@ namespace Infrastructure.Data
 
         public async Task<IReadOnlyList<Product>> GetAllProductsAsync()
         {
-
+         //   var products = _context.Products.OrderBy
 
             return  await _context.Products
                         .Include(p=>p.ProductBrand)
