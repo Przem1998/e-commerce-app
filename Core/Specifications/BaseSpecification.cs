@@ -6,13 +6,11 @@ namespace Core.Specifications
 {
     public class BaseSpecification<T> : ISpecification<T>
     {
-        //get all without id
         public BaseSpecification()
         {
 
         }
 
-        //get product with particular id
         public BaseSpecification(Expression<Func<T,bool>> criteria) 
         {
             Criteria = criteria;

@@ -39,13 +39,14 @@ namespace API.Controllers
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)] 
     [ProducesResponseType(typeof(ApiResponse),StatusCodes.Status404NotFound)] //Swagger doesn't see status
-    public async Task<ActionResult<IReadOnlyList<ProductToReturnDtos>>> GetProducts(string sort)
+    public async Task<ActionResult<IReadOnlyList<ProductToReturnDtos>>> GetProducts(string sort, int? brandId, int? typeId)
     {
-        var spec= new ProductsWithTypesAndBrandsSpecification(sort);
+        var spec= new ProductsWithTypesAndBrandsSpecification(sort,brandId,typeId);
     
         var prodcuts = await _productsRepository.ListAsync(spec);
         return Ok(_mapper.Map<IReadOnlyList<Product>,IReadOnlyList<ProductToReturnDtos>>(prodcuts));
-        }
+    }
+
     [HttpGet("{id}")]
     [ProducesResponseType(StatusCodes.Status200OK)] 
     [ProducesResponseType(typeof(ApiResponse),StatusCodes.Status404NotFound)] //Swagger doesn't see status

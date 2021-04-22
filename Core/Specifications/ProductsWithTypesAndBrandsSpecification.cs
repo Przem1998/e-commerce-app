@@ -12,11 +12,13 @@ namespace Core.Specifications
           AddInclude(x=> x.ProductBrand);
         }
       
-        public ProductsWithTypesAndBrandsSpecification(string sort)
+        // add criteria for Brand and Type
+        
+        public ProductsWithTypesAndBrandsSpecification(string sort, int? brandId, int? typeId) : base (x=>((!brandId.HasValue || x.ProductBrandId==brandId)&&(!typeId.HasValue || x.ProductTypeId==typeId)))
         {
           AddInclude(x=> x.ProductType);
           AddInclude(x=> x.ProductBrand);
-     
+          AddOrderBy(x=> x.Name);
 
           if(!string.IsNullOrEmpty(sort))
           {
