@@ -11,6 +11,7 @@ using API.Middleware;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 using API.Errors;
+using Microsoft.OpenApi.Models;
 
 namespace API
 {
@@ -33,10 +34,10 @@ namespace API
             services.AddControllers();
             
             services.AddDbContext<StoreContext>(x=> x.UseSqlite(_config.GetConnectionString("DefaultConnection")));
-            // services.AddSwaggerGen(c =>
-            // {
-            //     c.SwaggerDoc("v1", new OpenApiInfo { Title = "API", Version = "v1" });
-            // });
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "API", Version = "v1" });
+            });
             services.Configure<ApiBehaviorOptions>(options=>
             {
                 options.InvalidModelStateResponseFactory=actionContext=>
@@ -60,12 +61,13 @@ namespace API
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env) //middlware
         {
             app.UseMiddleware<ExceptionMiddleware>(); //report exceptons
-            if (env.IsDevelopment())
-            {
-    
-            //     app.UseSwagger();
-            //     app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "API v1"));
-             }
+       
+                app.UseSwagger();
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "API v1"));
+        
+            // if (env.IsDevelopment()) //development mode
+            // {
+            // }
             app.UseStatusCodePagesWithReExecute("/errors/{0}"); //middleware this move to error controller and return json result error 
 
 

@@ -90,3 +90,11 @@ C:\Users\User\Desktop\projekt_inzynierski\plumber\API\bin\Debug\net5.0\Infrastru
 C:\Users\User\Desktop\projekt_inzynierski\plumber\API\bin\Debug\net5.0\Core.pdb
 C:\Users\User\Desktop\projekt_inzynierski\plumber\API\bin\Debug\net5.0\AutoMapper.dll
 C:\Users\User\Desktop\projekt_inzynierski\plumber\API\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\User\Desktop\projekt_inzynierski\plumber\API\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\User\Desktop\projekt_inzynierski\plumber\API\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\User\Desktop\projekt_inzynierski\plumber\API\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\User\Desktop\projekt_inzynierski\plumber\API\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\User\Desktop\projekt_inzynierski\plumber\API\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\User\Desktop\projekt_inzynierski\plumber\API\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\User\Desktop\projekt_inzynierski\plumber\API\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\User\Desktop\projekt_inzynierski\plumber\API\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll

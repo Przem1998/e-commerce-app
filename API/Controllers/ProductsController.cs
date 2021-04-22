@@ -9,6 +9,8 @@ using Core.Specifications;
 using API.Dtos;
 using System.Linq;
 using AutoMapper;
+using API.Errors;
+using Microsoft.AspNetCore.Http;
 
 namespace API.Controllers
 {
@@ -35,6 +37,8 @@ namespace API.Controllers
         }
 
     [HttpGet]
+    [ProducesResponseType(StatusCodes.Status200OK)] 
+    [ProducesResponseType(typeof(ApiResponse),StatusCodes.Status404NotFound)] //Swagger doesn't see status
     public async Task<ActionResult<IReadOnlyList<ProductToReturnDtos>>> GetProducts()
     {
         var spec= new ProductsWithTypesAndBrandsSpecification();
@@ -42,24 +46,30 @@ namespace API.Controllers
         return Ok(_mapper.Map<IReadOnlyList<Product>,IReadOnlyList<ProductToReturnDtos>>(prodcuts));
         }
     [HttpGet("{id}")]
+    [ProducesResponseType(StatusCodes.Status200OK)] 
+    [ProducesResponseType(typeof(ApiResponse),StatusCodes.Status404NotFound)] //Swagger doesn't see status
     public async Task<ActionResult<ProductToReturnDtos>> GetProduct(int id)
     {
         var spec= new ProductsWithTypesAndBrandsSpecification(id);
- 
+        var product= await _productsRepository.GetEntityWithSpec(spec);
 
-     var product= await _productsRepository.GetEntityWithSpec(spec);
-       return _mapper.Map<Product,ProductToReturnDtos>(product);
+        if(product == null) return NotFound(new ApiResponse(404));
+        return _mapper.Map<Product,ProductToReturnDtos>(product);
 
     }
 
     [HttpGet("brands")]
+    [ProducesResponseType(StatusCodes.Status200OK)] 
+    [ProducesResponseType(typeof(ApiResponse),StatusCodes.Status404NotFound)] //Swagger doesn't see status
     public async Task<ActionResult<IReadOnlyList<ProductBrand>>> GetProductBrands()
     {
         return Ok(await _productBrandsRepository.ListAllAsync());
     }
 
     [HttpGet("types")]
-    public async Task<ActionResult<IReadOnlyList<ProductType>>> GetProductTypes()
+    [ProducesResponseType(StatusCodes.Status200OK)] 
+    [ProducesResponseType(typeof(ApiResponse),StatusCodes.Status404NotFound)] //Swagger doesn't see status
+     public async Task<ActionResult<IReadOnlyList<ProductType>>> GetProductTypes()
     {
         return Ok(await _productTypesRepository.ListAllAsync());
     }
