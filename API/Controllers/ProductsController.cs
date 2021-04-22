@@ -11,6 +11,7 @@ using System.Linq;
 using AutoMapper;
 using API.Errors;
 using Microsoft.AspNetCore.Http;
+using API.Helpers;
 
 namespace API.Controllers
 {
@@ -39,12 +40,20 @@ namespace API.Controllers
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)] 
     [ProducesResponseType(typeof(ApiResponse),StatusCodes.Status404NotFound)] //Swagger doesn't see status
-    public async Task<ActionResult<IReadOnlyList<ProductToReturnDtos>>> GetProducts(string sort, int? brandId, int? typeId)
+    public async Task<ActionResult<Pagination<ProductToReturnDtos>>> GetProducts([FromQuery]ProductSpecParams productParams)
     {
-        var spec= new ProductsWithTypesAndBrandsSpecification(sort,brandId,typeId);
+        var spec= new ProductsWithTypesAndBrandsSpecification(productParams);
     
+        var countSpec= new ProductWithFiltersForCountSpecification(productParams);
+
+        var totalItems = await _productsRepository.CountAsync(countSpec);
+
         var prodcuts = await _productsRepository.ListAsync(spec);
-        return Ok(_mapper.Map<IReadOnlyList<Product>,IReadOnlyList<ProductToReturnDtos>>(prodcuts));
+
+        var data = _mapper.Map<IReadOnlyList<Product>,IReadOnlyList<ProductToReturnDtos>>(prodcuts);
+
+
+        return Ok(new Pagination<ProductToReturnDtos>(productParams.PageIndex,productParams.PageSize,totalItems,data));
     }
 
     [HttpGet("{id}")]
