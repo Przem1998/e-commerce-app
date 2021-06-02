@@ -1,146 +1,146 @@
 [
   {
-    "Name": "Angular Speedster Board 2000",
+    "Name": "Kolano ocynkowane 1/2",
+    "Description": "zastosowanie: instalacje hydrauliczne dla wody pitnej (plus innych cieczy nieagresywnych), układy centralnego ogrzewania, instalacje gazowe, także sprężonego powietrza (gazy nieagresywne), instalacje nawadniające, budownictwo i konstrukcje Przekrój : 1/2 cala",
+    "Price": 2.15,
+    "PictureUrl": "images/products/kolano.png",
+    "ProductTypeId": 1,
+    "ProductSizeId": 2
+  },
+  {
+    "Name": "Kolano ocynkowane 3/4",
+    "Description": "zastosowanie: instalacje hydrauliczne dla wody pitnej (plus innych cieczy nieagresywnych), układy centralnego ogrzewania, instalacje gazowe, także sprężonego powietrza (gazy nieagresywne), instalacje nawadniające, budownictwo i konstrukcje Przekrój : 1/2 cala",
+    "Price": 2.59,
+    "PictureUrl": "images/products/kolano.png",
+    "ProductTypeId": 1,
+    "ProductSizeId": 3
+  },
+  {
+    "Name": "Kolano ocynkowane 1",
+    "Description": "zastosowanie: instalacje hydrauliczne dla wody pitnej (plus innych cieczy nieagresywnych), układy centralnego ogrzewania, instalacje gazowe, także sprężonego powietrza (gazy nieagresywne), instalacje nawadniające, budownictwo i konstrukcje Przekrój : 1/2 cala",
+    "Price": 4.39,
+    "PictureUrl": "images/products/kolano.png",
+    "ProductTypeId": 1,
+    "ProductSizeId": 4
+  },
+  {
+    "Name": "Kolano ocynkowane 1 1/4",
+    "Description": "zastosowanie: instalacje hydrauliczne dla wody pitnej (plus innych cieczy nieagresywnych), układy centralnego ogrzewania, instalacje gazowe, także sprężonego powietrza (gazy nieagresywne), instalacje nawadniające, budownictwo i konstrukcje Przekrój : 1/2 cala",
+    "Price": 8.4,
+    "PictureUrl": "images/products/kolano.png",
+    "ProductTypeId": 1,
+    "ProductSizeId": 5
+  },
+  {
+    "Name": "kolano nyplowe ocynkowane 3/8",
     "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-    "Price": 200,
-    "PictureUrl": "images/products/sb-ang1.png",
+    "Price": 2.7,
+    "PictureUrl": "images/products/kolanoNyplowe.png",
     "ProductTypeId": 1,
-    "ProductBrandId": 1
+    "ProductSizeId": 1
   },
   {
-    "Name": "Green Angular Board 3000",
-    "Description": "Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.",
-    "Price": 150,
-    "PictureUrl": "images/products/sb-ang2.png",
-    "ProductTypeId": 1,
-    "ProductBrandId": 1
-  },
-  {
-    "Name": "Core Board Speed Rush 3",
-    "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
-    "Price": 180,
-    "PictureUrl": "images/products/sb-core1.png",
-    "ProductTypeId": 1,
-    "ProductBrandId": 2
-  },
-  {
-    "Name": "Net Core Super Board",
-    "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
-    "Price": 300,
-    "PictureUrl": "images/products/sb-core2.png",
-    "ProductTypeId": 1,
-    "ProductBrandId": 2
-  },
-  {
-    "Name": "React Board Super Whizzy Fast",
-    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-    "Price": 250,
-    "PictureUrl": "images/products/sb-react1.png",
-    "ProductTypeId": 1,
-    "ProductBrandId": 4
-  },
-  {
-    "Name": "Typescript Entry Board",
+    "Name": "kolano nyplowe ocynkowane 1 1/4",
     "Description": "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
-    "Price": 120,
-    "PictureUrl": "images/products/sb-ts1.png",
+    "Price": 8.7,
+    "PictureUrl": "images/products/kolanoNyplowe.png",
     "ProductTypeId": 1,
-    "ProductBrandId": 5
+    "ProductSizeId": 5
   },
   {
-    "Name": "Core Blue Hat",
+    "Name": "Nypel ocynkowany 2",
     "Description": "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-    "Price": 10,
-    "PictureUrl": "images/products/hat-core1.png",
+    "Price": 10.5,
+    "PictureUrl": "images/products/nypel.png",
     "ProductTypeId": 2,
-    "ProductBrandId": 2
+    "ProductSizeId": 7
   },
   {
-    "Name": "Green React Woolen Hat",
+    "Name": "Nypel mosiężny 1/2",
     "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
-    "Price": 8,
-    "PictureUrl": "images/products/hat-react1.png",
+    "Price": 3,
+    "PictureUrl": "images/products/nypelMosiezny.png",
     "ProductTypeId": 2,
-    "ProductBrandId": 4
+    "ProductSizeId": 2
   },
   {
-    "Name": "Purple React Woolen Hat",
+    "Name": "Nypel mosiężny 1",
     "Description": "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-    "Price": 15,
-    "PictureUrl": "images/products/hat-react2.png",
+    "Price": 7.7,
+    "PictureUrl": "images/products/nypelMosiezny.png",
     "ProductTypeId": 2,
-    "ProductBrandId": 4
+    "ProductSizeId": 4
   },
   {
-    "Name": "Blue Code Gloves",
+    "Name": "Nypel mosiężny 3/4",
     "Description": "Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.",
-    "Price": 18,
-    "PictureUrl": "images/products/glove-code1.png",
-    "ProductTypeId": 4,
-    "ProductBrandId": 3
+    "Price": 4.3,
+    "PictureUrl": "images/products/nypelMosiezny.png",
+    "ProductTypeId": 2,
+    "ProductSizeId": 3
   },
   {
-    "Name": "Green Code Gloves",
+    "Name": "Nypel ocynkowany 1",
     "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
-    "Price": 15,
-    "PictureUrl": "images/products/glove-code2.png",
+    "Price": 6,
+    "PictureUrl": "images/products/nypel.png",
     "ProductTypeId": 4,
-    "ProductBrandId": 3
+    "ProductSizeId": 4
   },
   {
-    "Name": "Purple React Gloves",
+    "Name": "Nypel ocynkowany 3/4",
     "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa.",
-    "Price": 16,
-    "PictureUrl": "images/products/glove-react1.png",
-    "ProductTypeId": 4,
-    "ProductBrandId": 4
+    "Price": 5,
+    "PictureUrl": "images/products/nypel.png",
+    "ProductTypeId": 2,
+    "ProductSizeId": 3
   },
   {
-    "Name": "Green React Gloves",
+    "Name": "Trójnik ocynkowany 1/2",
     "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
-    "Price": 14,
-    "PictureUrl": "images/products/glove-react2.png",
+    "Price": 2.5,
+    "PictureUrl": "images/products/trojnik.png",
     "ProductTypeId": 4,
-    "ProductBrandId": 4
+    "ProductSizeId": 2
   },
   {
-    "Name": "Redis Red Boots",
+    "Name": "Trójnik ocynkowany 1",
     "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
-    "Price": 250,
-    "PictureUrl": "images/products/boot-redis1.png",
-    "ProductTypeId": 3,
-    "ProductBrandId": 6
+    "Price": 8.1,
+    "PictureUrl": "images/products/trojnik.png",
+    "ProductTypeId": 5,
+    "ProductSizeId": 4
   },
   {
-    "Name": "Core Red Boots",
+    "Name": "Zawór kulowy 1 1/2",
     "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-    "Price": 189.99,
-    "PictureUrl": "images/products/boot-core2.png",
-    "ProductTypeId": 3,
-    "ProductBrandId": 2
+    "Price": 59,
+    "PictureUrl": "images/products/zaworKulowy.png",
+    "ProductTypeId": 4,
+    "ProductSizeId": 6
   },
   {
-    "Name": "Core Purple Boots",
+    "Name": "Zawór grzybkowy 2",
     "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
-    "Price": 199.99,
-    "PictureUrl": "images/products/boot-core1.png",
-    "ProductTypeId": 3,
-    "ProductBrandId": 2
+    "Price": 100,
+    "PictureUrl": "images/products/zaworGrzybkowy.png",
+    "ProductTypeId": 4,
+    "ProductSizeId": 7
   },
   {
-    "Name": "Angular Purple Boots",
+    "Name": "Rura ocynk 1",
     "Description": "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
-    "Price": 150,
-    "PictureUrl": "images/products/boot-ang2.png",
+    "Price": 19,
+    "PictureUrl": "images/products/ruraOcynk.png",
     "ProductTypeId": 3,
-    "ProductBrandId": 1
+    "ProductSizeId": 4
   },
   {
-    "Name": "Angular Blue Boots",
+    "Name": "Rura czarna 1/2",
     "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
-    "Price": 180,
-    "PictureUrl": "images/products/boot-ang1.png",
+    "Price": 7,
+    "PictureUrl": "images/products/rura.png",
     "ProductTypeId": 3,
-    "ProductBrandId": 1
+    "ProductSizeId": 2
   }
 ]

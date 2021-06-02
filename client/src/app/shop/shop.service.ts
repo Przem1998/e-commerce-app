@@ -1,6 +1,6 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IBrand } from '../shared/models/brand';
+import { ISize } from '../shared/models/size';
 import { IPagination } from '../shared/models/pagination';
 import { IType } from '../shared/models/productType';
 import {map} from 'rxjs/operators';
@@ -23,8 +23,8 @@ export class ShopService {
   getProducts(shopParams:ShopParams){
     let params = new HttpParams();
      
-    if(shopParams.brandId !== 0){
-      params=params.append('brandId',shopParams.brandId.toString());
+    if(shopParams.sizeId !== 0){
+      params=params.append('sizeId',shopParams.sizeId.toString());
     }
     if(shopParams.typeId !== 0){
       params = params.append('typeId', shopParams.typeId.toString());
@@ -44,8 +44,8 @@ export class ShopService {
       }) // mapping to IPagination
     ); 
   }
-  getBrands(){
-    return this.http.get<IBrand[]>(this.baseUrl+ 'products/brands');
+  getSizes(){
+    return this.http.get<ISize[]>(this.baseUrl+ 'products/sizes');
   }
   getTypes(){
     return this.http.get<IType[]>(this.baseUrl+ 'products/types');

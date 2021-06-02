@@ -1,31 +1,29 @@
-<div class="container">
+<div class="container mt-3">
     <div class="row">
         <section class="col-3">
-
-            <h5 class="text-warning ml-3">Sort</h5>
+            <h5 class="text-warning ml-3 mb-2">Sortowanie</h5>
             <select name="" id="" class="custom-select my-3" (change)="onSortSelected($event.target.value)">
-            <option *ngFor="let sort of sortOptions"
-                [value]="sort.value">
-                {{sort.name}}
-        </option>
+                <option *ngFor="let sort of sortOptions"
+                    [value]="sort.value">
+                    {{sort.name}}
+                </option>
             </select>
 
-
-            <h5 class="text-warning ml-3">
-                Brands
+            <h5 class="text-warning ml-3 mt-4">
+               Przekroje
             </h5>
             <ul class="list-group my-3">
-                <li class="list-group-item" *ngFor="let brand of brands" 
-                    [class.active]="brand.id === this.shopParams.brandId"
-                    [value]="brand.id"
-                    (click)="onBrandSelected(brand.id)"
+                <li class="list-group-item" *ngFor="let size of sizes" 
+                    [class.active]="size.id === this.shopParams.sizeId"
+                    [value]="size.id"
+                    (click)="onSizeSelected(size.id)"
                 >
-                    {{brand.myProperty}}
+                    {{size.size}}
                 </li>
              
               </ul>
               <h5 class="text-warning ml-3">
-                Types
+                Rodzaje
             </h5>
             <ul class="list-group my-3">
                 <li class="list-group-item" *ngFor="let type of types"

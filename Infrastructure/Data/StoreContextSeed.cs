@@ -15,13 +15,13 @@ namespace Infrastructure.Data
         {
             try
             {
-                if (!context.ProductBrands.Any())
+                if (!context.ProductSizes.Any())
                 {
-                    var brandsData = File.ReadAllText("../Infrastructure/SeedData/brands.json");
-                    var brands = JsonSerializer.Deserialize<List<ProductBrand>>(brandsData);
+                    var brandsData = File.ReadAllText("../Infrastructure/SeedData/sizes.json");
+                    var brands = JsonSerializer.Deserialize<List<ProductSize>>(brandsData);
                     foreach (var item in brands)
                     {
-                        context.ProductBrands.Add(item);
+                        context.ProductSizes.Add(item);
                     }
                     await context.SaveChangesAsync();
                 }

@@ -7,12 +7,12 @@ namespace Infrastructure.Data.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "ProductBrands",
+                name: "ProductSizes",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    MyProperty = table.Column<string>(type: "TEXT", nullable: true)
+                    Size = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -43,15 +43,15 @@ namespace Infrastructure.Data.Migrations
                     Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     PictureUrl = table.Column<string>(type: "TEXT", nullable: false),
                     ProductTypeId = table.Column<int>(type: "INTEGER", nullable: false),
-                    ProductBrandId = table.Column<int>(type: "INTEGER", nullable: false)
+                    ProductSizeId = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Products", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Products_ProductBrands_ProductBrandId",
-                        column: x => x.ProductBrandId,
-                        principalTable: "ProductBrands",
+                        name: "FK_Products_ProductSizes_ProductSizeId",
+                        column: x => x.ProductSizeId,
+                        principalTable: "ProductSizes",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
@@ -63,9 +63,9 @@ namespace Infrastructure.Data.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Products_ProductBrandId",
+                name: "IX_Products_ProductSizeId",
                 table: "Products",
-                column: "ProductBrandId");
+                column: "ProductSizeId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Products_ProductTypeId",
@@ -79,7 +79,7 @@ namespace Infrastructure.Data.Migrations
                 name: "Products");
 
             migrationBuilder.DropTable(
-                name: "ProductBrands");
+                name: "ProductSizes");
 
             migrationBuilder.DropTable(
                 name: "ProductTypes");

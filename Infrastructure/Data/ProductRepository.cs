@@ -15,9 +15,9 @@ namespace Infrastructure.Data
             _context = context;
         }
 
-        public async Task<IReadOnlyList<ProductBrand>> GetAllProductBrandsAsync()
+        public async Task<IReadOnlyList<ProductSize>> GetAllProductSizesAsync()
         {
-           return await _context.ProductBrands.ToListAsync();
+           return await _context.ProductSizes.ToListAsync();
         }
 
         public async Task<IReadOnlyList<Product>> GetAllProductsAsync()
@@ -25,7 +25,7 @@ namespace Infrastructure.Data
          //   var products = _context.Products.OrderBy
 
             return  await _context.Products
-                        .Include(p=>p.ProductBrand)
+                        .Include(p=>p.ProductSize)
                         .Include(p=>p.ProductType)
                         .ToListAsync();
         }
@@ -40,7 +40,7 @@ namespace Infrastructure.Data
             
         
             return await _context.Products
-                        .Include(p=>p.ProductBrand)
+                        .Include(p=>p.ProductSize)
                         .Include(p=>p.ProductType)
                         .FirstOrDefaultAsync(p=>p.Id==id);
         }

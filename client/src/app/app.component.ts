@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'WebShop';
+  title = 'Sklep hydrauliczny - beta';
 
 constructor(){}
   ngOnInit(): void {

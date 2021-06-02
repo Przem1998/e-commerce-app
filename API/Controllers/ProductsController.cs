@@ -23,16 +23,16 @@ namespace API.Controllers
          private readonly IGenericRepository<Product> _productsRepository;
          private readonly IGenericRepository<ProductType> _productTypesRepository;
          
-         private readonly IGenericRepository<ProductBrand> _productBrandsRepository;
+         private readonly IGenericRepository<ProductSize> _productSizesRepository;
          private readonly IMapper _mapper;
         public ProductsController(IGenericRepository<Product> productsRepository,
-                                  IGenericRepository<ProductBrand> productBrandsRepository,
+                                  IGenericRepository<ProductSize> productSizesRepository,
                                   IGenericRepository<ProductType> productTypesRepository,
                                   IMapper mapper
                                  )
         {
             _productsRepository=productsRepository;
-            _productBrandsRepository=productBrandsRepository;
+            _productSizesRepository=productSizesRepository;
             _productTypesRepository = productTypesRepository;
             _mapper=mapper;
         }
@@ -42,7 +42,7 @@ namespace API.Controllers
     [ProducesResponseType(typeof(ApiResponse),StatusCodes.Status404NotFound)] //Swagger doesn't see status
     public async Task<ActionResult<Pagination<ProductToReturnDtos>>> GetProducts([FromQuery]ProductSpecParams productParams)
     {
-        var spec= new ProductsWithTypesAndBrandsSpecification(productParams);
+        var spec= new ProductsWithTypesAndSizesSpecification(productParams);
     
         var countSpec= new ProductWithFiltersForCountSpecification(productParams);
 
@@ -61,7 +61,7 @@ namespace API.Controllers
     [ProducesResponseType(typeof(ApiResponse),StatusCodes.Status404NotFound)] //Swagger doesn't see status
     public async Task<ActionResult<ProductToReturnDtos>> GetProduct(int id)
     {
-        var spec= new ProductsWithTypesAndBrandsSpecification(id);
+        var spec= new ProductsWithTypesAndSizesSpecification(id);
         var product= await _productsRepository.GetEntityWithSpec(spec);
 
         if(product == null) return NotFound(new ApiResponse(404));
@@ -69,12 +69,12 @@ namespace API.Controllers
 
     }
 
-    [HttpGet("brands")]
+    [HttpGet("sizes")]
     [ProducesResponseType(StatusCodes.Status200OK)] 
     [ProducesResponseType(typeof(ApiResponse),StatusCodes.Status404NotFound)] //Swagger doesn't see status
-    public async Task<ActionResult<IReadOnlyList<ProductBrand>>> GetProductBrands()
+    public async Task<ActionResult<IReadOnlyList<ProductSize>>> GetProductBrands()
     {
-        return Ok(await _productBrandsRepository.ListAllAsync());
+        return Ok(await _productSizesRepository.ListAllAsync());
     }
 
     [HttpGet("types")]
