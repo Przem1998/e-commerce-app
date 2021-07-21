@@ -6,7 +6,6 @@ namespace Core.Entities
     {
         public CustomerBasket()
         {
-
         }
 
         public CustomerBasket(string id)
