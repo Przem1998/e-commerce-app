@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hvxbIEGEHU/adnVmKR0xy7DdP3cYRU1KEHofoDwWc0e89MzrsfFTTwM6znmII+EZVit932Z8PVnUJ+ad8FRdPg==",
+  "dgSpecHash": "Rp5d/5tSyCTyGo6sSDeDv7hKfDNJIm6rEUmEoLQL1EU3NOQfjvXkGjFE885s7ZUAS9kPANbYHbXnUaXU6lcntQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\User\\Desktop\\projekt_inzynierski\\plumber\\Core\\Core.csproj",
+  "projectFilePath": "C:\\public\\projekt_inzynierski\\plumber\\Core\\Core.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

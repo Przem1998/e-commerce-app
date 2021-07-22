@@ -10,3 +10,15 @@ C:\Users\User\Desktop\projekt_inzynierski\plumber\Core\obj\Debug\net5.0\Core.csp
 C:\Users\User\Desktop\projekt_inzynierski\plumber\Core\obj\Debug\net5.0\Core.dll
 C:\Users\User\Desktop\projekt_inzynierski\plumber\Core\obj\Debug\net5.0\ref\Core.dll
 C:\Users\User\Desktop\projekt_inzynierski\plumber\Core\obj\Debug\net5.0\Core.pdb
+C:\public\projekt_inzynierski\plumber\Core\bin\Debug\net5.0\Core.deps.json
+C:\public\projekt_inzynierski\plumber\Core\bin\Debug\net5.0\Core.dll
+C:\public\projekt_inzynierski\plumber\Core\bin\Debug\net5.0\ref\Core.dll
+C:\public\projekt_inzynierski\plumber\Core\bin\Debug\net5.0\Core.pdb
+C:\public\projekt_inzynierski\plumber\Core\obj\Debug\net5.0\Core.csprojAssemblyReference.cache
+C:\public\projekt_inzynierski\plumber\Core\obj\Debug\net5.0\Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\public\projekt_inzynierski\plumber\Core\obj\Debug\net5.0\Core.AssemblyInfoInputs.cache
+C:\public\projekt_inzynierski\plumber\Core\obj\Debug\net5.0\Core.AssemblyInfo.cs
+C:\public\projekt_inzynierski\plumber\Core\obj\Debug\net5.0\Core.csproj.CoreCompileInputs.cache
+C:\public\projekt_inzynierski\plumber\Core\obj\Debug\net5.0\Core.dll
+C:\public\projekt_inzynierski\plumber\Core\obj\Debug\net5.0\ref\Core.dll
+C:\public\projekt_inzynierski\plumber\Core\obj\Debug\net5.0\Core.pdb

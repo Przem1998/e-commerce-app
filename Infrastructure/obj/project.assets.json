@@ -378,7 +378,7 @@
           "lib/netstandard2.0/SQLitePCLRaw.provider.dynamic_cdecl.dll": {}
         }
       },
-      "StackExchange.Redis/2.2.4": {
+      "StackExchange.Redis/2.2.62": {
         "type": "package",
         "dependencies": {
           "Pipelines.Sockets.Unofficial": "2.2.0",
@@ -1108,10 +1108,10 @@
         "sqlitepclraw.provider.dynamic_cdecl.nuspec"
       ]
     },
-    "StackExchange.Redis/2.2.4": {
-      "sha512": "wM0OuRyRaZTFndFRjIOvas4jjkeclRJsmNm0eAx5tOju3SQisrLubNaSFT/dBypi4Vh1n7nYc1gWpw9L7ernOg==",
+    "StackExchange.Redis/2.2.62": {
+      "sha512": "rcIFo/dK67An3mO1Heov0GZj9TYLMd+YB4drA09vOQz9ZpdjMhxSVtlDATcGpC++EH0aUGGnRnzhq0R0oXBOXg==",
       "type": "package",
-      "path": "stackexchange.redis/2.2.4",
+      "path": "stackexchange.redis/2.2.62",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1125,7 +1125,7 @@
         "lib/netcoreapp3.1/StackExchange.Redis.xml",
         "lib/netstandard2.0/StackExchange.Redis.dll",
         "lib/netstandard2.0/StackExchange.Redis.xml",
-        "stackexchange.redis.2.2.4.nupkg.sha512",
+        "stackexchange.redis.2.2.62.nupkg.sha512",
         "stackexchange.redis.nuspec"
       ]
     },
@@ -1636,7 +1636,7 @@
     "net5.0": [
       "Core >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Sqlite >= 5.0.5",
-      "StackExchange.Redis >= 2.2.4"
+      "StackExchange.Redis >= 2.2.62"
     ]
   },
   "packageFolders": {
@@ -1645,11 +1645,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\projekt_inzynierski\\plumber\\Infrastructure\\Infrastructure.csproj",
+      "projectUniqueName": "C:\\public\\projekt_inzynierski\\plumber\\Infrastructure\\Infrastructure.csproj",
       "projectName": "Infrastructure",
-      "projectPath": "C:\\Users\\User\\Desktop\\projekt_inzynierski\\plumber\\Infrastructure\\Infrastructure.csproj",
+      "projectPath": "C:\\public\\projekt_inzynierski\\plumber\\Infrastructure\\Infrastructure.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\projekt_inzynierski\\plumber\\Infrastructure\\obj\\",
+      "outputPath": "C:\\public\\projekt_inzynierski\\plumber\\Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1666,8 +1666,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\User\\Desktop\\projekt_inzynierski\\plumber\\Core\\Core.csproj": {
-              "projectPath": "C:\\Users\\User\\Desktop\\projekt_inzynierski\\plumber\\Core\\Core.csproj"
+            "C:\\public\\projekt_inzynierski\\plumber\\Core\\Core.csproj": {
+              "projectPath": "C:\\public\\projekt_inzynierski\\plumber\\Core\\Core.csproj"
             }
           }
         }
@@ -1688,7 +1688,7 @@
           },
           "StackExchange.Redis": {
             "target": "Package",
-            "version": "[2.2.4, )"
+            "version": "[2.2.62, )"
           }
         },
         "imports": [
