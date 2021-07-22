@@ -2417,11 +2417,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\public\\projekt_inzynierski\\plumber\\API\\API.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Desktop\\projekt_inzynierski\\plumber\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "C:\\public\\projekt_inzynierski\\plumber\\API\\API.csproj",
+      "projectPath": "C:\\Users\\User\\Desktop\\projekt_inzynierski\\plumber\\API\\API.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\public\\projekt_inzynierski\\plumber\\API\\obj\\",
+      "outputPath": "C:\\Users\\User\\Desktop\\projekt_inzynierski\\plumber\\API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2438,8 +2438,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\public\\projekt_inzynierski\\plumber\\Infrastructure\\Infrastructure.csproj": {
-              "projectPath": "C:\\public\\projekt_inzynierski\\plumber\\Infrastructure\\Infrastructure.csproj"
+            "C:\\Users\\User\\Desktop\\projekt_inzynierski\\plumber\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\User\\Desktop\\projekt_inzynierski\\plumber\\Infrastructure\\Infrastructure.csproj"
             }
           }
         }

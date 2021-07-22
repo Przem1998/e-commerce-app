@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\public\\projekt_inzynierski\\plumber\\Core\\Core.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Desktop\\projekt_inzynierski\\plumber\\Core\\Core.csproj",
       "projectName": "Core",
-      "projectPath": "C:\\public\\projekt_inzynierski\\plumber\\Core\\Core.csproj",
+      "projectPath": "C:\\Users\\User\\Desktop\\projekt_inzynierski\\plumber\\Core\\Core.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\public\\projekt_inzynierski\\plumber\\Core\\obj\\",
+      "outputPath": "C:\\Users\\User\\Desktop\\projekt_inzynierski\\plumber\\Core\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",

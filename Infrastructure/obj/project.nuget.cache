@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cMSWwQCkqeZmk/4QUE483GiDUxYBXtY/hTgQOfONMnldKzpej3dqGn1Y8xkA73kHfJsw/Dm3fZ6BpkQSfmvEvw==",
+  "dgSpecHash": "2q6dDTSlFA+Lo8kkFCeuymRR5S6klERL1hgN/aeWvJ/q9CNuMFOguAQX1FFgimovnxINmQ+hr3hEQqtHqJ/fuA==",
   "success": true,
-  "projectFilePath": "C:\\public\\projekt_inzynierski\\plumber\\Infrastructure\\Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\User\\Desktop\\projekt_inzynierski\\plumber\\Infrastructure\\Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\microsoft.data.sqlite.core\\5.0.5\\microsoft.data.sqlite.core.5.0.5.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.dotnet.platformabstractions\\3.1.6\\microsoft.dotnet.platformabstractions.3.1.6.nupkg.sha512",

@@ -13,6 +13,8 @@ const routes: Routes = [
   {path: 'server-error', component: ServerErrorComponent, data:{breadcrumb: 'Server Error'}},
   {path: 'not-found', component:NotFoundComponent, data:{breadcrumb: 'Not found'}},
   {path: 'shop', loadChildren: () => import('./shop/shop.module').then(mod => mod.ShopModule), data:{breadcrumb: 'Sklep'}},
+  {path: 'basket', loadChildren: () => import('./basket/basket.module').then(mod => mod.BasketModule), data:{breadcrumb: 'Koszyk'}},
+ 
   {path: '**', redirectTo: 'not-found', pathMatch: 'full'}
 ]; //navigate beetween pages
 
