@@ -67,7 +67,7 @@ export class BasketService {
       price: item.price,
       quantity,
       pictureUrl: item.pictureUrl,
-      type: item.productType,
+      typeOfProduct: item.productType,
       size: item.productSize
     }
   }

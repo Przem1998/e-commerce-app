@@ -11,7 +11,7 @@ export interface IBasketItem {
     price: number;
     quantity: number;
     pictureUrl: string;
-    type: string;
+    typeOfProduct: string;
     size: string;
 }
 
