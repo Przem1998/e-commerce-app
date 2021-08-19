@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Desktop\\projekt_inzynierski\\plumber\\API\\API.csproj": {}
+    "C:\\Users\\User\\Desktop\\projekt_inzynierski\\plumber\\api\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Desktop\\projekt_inzynierski\\plumber\\API\\API.csproj": {
+    "C:\\Users\\User\\Desktop\\projekt_inzynierski\\plumber\\api\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\projekt_inzynierski\\plumber\\API\\API.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\projekt_inzynierski\\plumber\\api\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\User\\Desktop\\projekt_inzynierski\\plumber\\API\\API.csproj",
+        "projectPath": "C:\\Users\\User\\Desktop\\projekt_inzynierski\\plumber\\api\\API.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\projekt_inzynierski\\plumber\\API\\obj\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\projekt_inzynierski\\plumber\\api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -124,6 +124,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.9, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -183,13 +189,25 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
               "version": "[5.0.5, )"
             },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[6.12.1, )"
+            },
             "StackExchange.Redis": {
               "target": "Package",
               "version": "[2.2.62, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.12.1, )"
             }
           },
           "imports": [
