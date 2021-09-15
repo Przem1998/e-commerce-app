@@ -20,6 +20,6 @@ namespace API.Dtos
         [Required]
         public string ProductType { get; set; }
         [Required]
-        public string ProductSize { get; set; }
+       public string ProductSize { get; set; }
     }
 }

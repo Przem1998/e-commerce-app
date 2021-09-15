@@ -7,13 +7,17 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 
-namespace API.Extensions
+namespace API.Extansions
 {
-    public static class IdentityServiceExtensins
+    public static class IdentityServiceExtensions
     {
-        public static IServiceCollection AddIdentityServices(this IServiceCollection services, IConfiguration config)
+        
+         //alow user menager to work with id db
+        public static IServiceCollection AddIdentityServices(this IServiceCollection services,
+        IConfiguration config)
         {
             var builder = services.AddIdentityCore<AppUser>();
+
             builder = new IdentityBuilder(builder.UserType, builder.Services);
             builder.AddEntityFrameworkStores<AppIdentityDbContext>();
             builder.AddSignInManager<SignInManager<AppUser>>();
@@ -23,13 +27,16 @@ namespace API.Extensions
                     {
                         options.TokenValidationParameters = new TokenValidationParameters
                         {
-                            ValidateIssuerSigningKey = true, // in order to prevent anonymous authentication
+                            ValidateIssuerSigningKey = true, 
                             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["Token:Key"])),
                             ValidIssuer = config["Token:Issuer"],
                             ValidateIssuer = true,
                             ValidateAudience = false
+                          
+                            
                         };
                     });
+
             return services;
         }
     }
