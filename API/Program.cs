@@ -29,10 +29,10 @@ namespace API
                     await StoreContextSeed.SeedAsync(context, loggerFactory);
 
                     //creste store context and seeding data layer
-                    var userMenager = services.GetRequiredService<UserManager<AppUser>>();
+                    var userManager = services.GetRequiredService<UserManager<AppUser>>();
                     var identityContext = services.GetRequiredService<AppIdentityDbContext>();
                     await identityContext.Database.MigrateAsync();
-                    await AppIdentityDbContextSeed.SeedUsersAsync(userMenager);
+                    await AppIdentityDbContextSeed.SeedUsersAsync(userManager);
 
                 }catch(Exception ex)
                 {

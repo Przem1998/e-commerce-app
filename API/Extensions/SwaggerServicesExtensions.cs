@@ -10,7 +10,8 @@ namespace API.Extansions
         {
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "PlumberShop", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Plumber API", Version = "v1" });
+
                 var securitySchema = new OpenApiSecurityScheme
                 {
                   Description = "JWT Auth Bearer Scheme",
@@ -24,10 +25,9 @@ namespace API.Extansions
                     Id = "Bearer"
                   }
                 };
-                c.AddSecurityDefinition("Bearer", securitySchema);
-                var securityRequiremnt = new OpenApiSecurityRequirement{{securitySchema, new[]{"Bearer"}}};
-                c.AddSecurityRequirement(securityRequiremnt) ;
-    
+                c.AddSecurityDefinition("Bearer",securitySchema);
+                var securityRequirement = new OpenApiSecurityRequirement {{securitySchema, new[]{"Bearer"}}};
+                c.AddSecurityRequirement(securityRequirement);
             });
           
           return services;

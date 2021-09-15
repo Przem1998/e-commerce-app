@@ -199,7 +199,7 @@
             },
             "Microsoft.IdentityModel.Tokens": {
               "target": "Package",
-              "version": "[6.12.1, )"
+              "version": "[6.12.2, )"
             },
             "StackExchange.Redis": {
               "target": "Package",
@@ -207,7 +207,7 @@
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
-              "version": "[6.12.1, )"
+              "version": "[6.12.2, )"
             }
           },
           "imports": [

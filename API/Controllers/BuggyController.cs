@@ -13,7 +13,6 @@ namespace API.Controllers
             _context = context;
 
         }
-
         [HttpGet("testauth")]
         [Authorize]
         public ActionResult<string> GetSecretText()

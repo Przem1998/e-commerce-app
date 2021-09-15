@@ -4,11 +4,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Infrastructure.Data;
+using Infrastructure.Identity;
 using API.Helpers;
 using API.Middleware;
 using API.Extansions;
 using StackExchange.Redis;
-using Infrastructure.Identity;
+using API.Extensions;
 
 namespace API
 {
@@ -23,12 +24,12 @@ namespace API
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        { 
+        {
             services.AddAutoMapper(typeof(MappingProfiles));
             services.AddControllers();
             services.AddDbContext<StoreContext>(x=> x.UseSqlite(_config.GetConnectionString("DefaultConnection")));
-        
-            services.AddDbContext<AppIdentityDbContext>(x =>{
+            services.AddDbContext<AppIdentityDbContext>(x =>
+            {
                 x.UseSqlite(_config.GetConnectionString("IdentityConnection"));
             });
 
@@ -39,7 +40,7 @@ namespace API
             });
             
             services.AddApplicationServices();
-            services.AddIdentityServices(_config );
+            services.AddIdentityServices(_config);
             services.AddSwaggerDocumentation();
             services.AddCors(opt=>{
                 opt.AddPolicy("CorsPolicy", policy=>
