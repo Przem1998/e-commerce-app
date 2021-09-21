@@ -11,13 +11,9 @@ import { ShopService } from '../shop.service';
   styleUrls: ['./product-details.component.scss']
 })
 export class ProductDetailsComponent implements OnInit {
-
+  quantity =1;
   product:IProduct;
-  quantity = 1;
-  constructor(private shopService: ShopService, 
-              private activateRoute: ActivatedRoute, 
-              private bcService: BreadcrumbService, 
-              private basketService: BasketService) {
+  constructor(private shopService: ShopService, private activateRoute: ActivatedRoute, private bcService: BreadcrumbService, private basketService: BasketService) {
     this.bcService.set('@productDetails', ' ');
    }
 
@@ -25,16 +21,18 @@ export class ProductDetailsComponent implements OnInit {
     this.loadProduct();
   }
   addItemToBasket(){
-    this.basketService.addItemToBasket(this.product, this.quantity);
+    this.basketService.addItemToBasket(this.product,this.quantity);
   }
   incrementQuantity(){
     this.quantity++;
   }
   decrementQuantity(){
-    if(this.quantity >1){
+    if(this.quantity > 1){
       this.quantity--;
     }
+    else this.quantity=1;
   }
+
   loadProduct(){
     this.shopService.getProduct(+this.activateRoute.snapshot.paramMap.get('id')).subscribe(product=>{ 
       this.product=product; 

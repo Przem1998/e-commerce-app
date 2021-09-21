@@ -10,7 +10,6 @@ import { IBasketTotals } from '../../models/basket';
 })
 export class OrderTotalsComponent implements OnInit {
   basketTotal$: Observable<IBasketTotals>;
-
   constructor(private basketService: BasketService) { }
 
   ngOnInit(): void {

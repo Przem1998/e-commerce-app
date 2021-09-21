@@ -14,7 +14,6 @@ namespace Infrastructure.Services
     {
         private readonly IConfiguration _config;
         private readonly SymmetricSecurityKey _key;
-
         public TokenService(IConfiguration config)
         {
             _config = config;
@@ -38,7 +37,6 @@ namespace Infrastructure.Services
             };
             var tokenHandler = new JwtSecurityTokenHandler();
             var token = tokenHandler.CreateToken(tokenDescriptor);
-
             return tokenHandler.WriteToken(token);
         }
     }

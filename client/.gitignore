@@ -1,5 +1,9 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
-
+obj
+bin
+appsettings.json
+*.db
+*.rdb
 # compiled output
 /dist
 /tmp
@@ -44,5 +48,3 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
-
-*.rdb

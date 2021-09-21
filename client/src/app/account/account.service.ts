@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHandler, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
@@ -23,32 +23,29 @@ export class AccountService {
   loadCurrentUser(token: string){
     let headers = new HttpHeaders();
     headers = headers.set('Authorization', `Bearer ${token}`);
-    return this.http.get(this.baseUrl + 'account', {headers}).pipe(
-      map((user: IUser) => {
-        if(user){
-          localStorage.setItem('token', user.token);
-          this.currentUserSource.next(user);
-        }
+    return this.http.get(this.baseUrl + 'account', {headers})
+    .pipe(
+      map ((user: IUser) =>{
+        localStorage.setItem('token', user.token);
+        this.currentUserSource.next(user);
       })
     )
-  } // persist current user also after reload website
+  }
 
   login(values: any){
-    return this.http.post(this.baseUrl + 'account/login', values).pipe(
+    return this.http.post(this.baseUrl + 'account/login', values)
+    .pipe(
       map((user: IUser) => {
-        if(user){
-          localStorage.setItem('token', user.token);
-          this.currentUserSource.next(user);
-        }
+        localStorage.setItem('token',user.token);
+        this.currentUserSource.next(user);
       })
-    );
+      );
   }
   register(values: any){
-    return this.http.post(this.baseUrl + 'account/register', values).pipe(
+    return this.http.post(this.baseUrl + 'account/register',values)
+    .pipe(
       map((user: IUser) => {
-        if(user){
-          localStorage.setItem('token', user.token);
-        }
+        localStorage.setItem('token',user.token);
       })
     );
   }
@@ -57,7 +54,7 @@ export class AccountService {
     this.currentUserSource.next(null);
     this.router.navigateByUrl('/');
   }
-  cheeckEmailExists(email: string){
-    return this.http.get(this.baseUrl + '/account/emailexists?email=' + email);
+  checkIfEmailExists(email: string){
+    return this.http.get(this.baseUrl+'/account/emailexists?email=' + email);
   }
 }

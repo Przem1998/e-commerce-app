@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AccountService } from '../account.service';
 
 @Component({
@@ -8,25 +9,24 @@ import { AccountService } from '../account.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  loginForm: FormGroup;
+  loginForm: FormGroup
 
-  constructor(private accountService: AccountService) { }
+  constructor(private accountService: AccountService, private router: Router) { }
 
   ngOnInit(): void {
     this.createLoginForm();
   }
-
   createLoginForm(){
     this.loginForm = new FormGroup({
-      email: new FormControl('', Validators.required),
+      email: new FormControl('', (Validators.required, Validators.pattern("^([0-9a-zA-Z]([-.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$"))),
       password: new FormControl('', Validators.required)
     });
   }
   onSubmit(){
-    this.accountService.login(this.loginForm.value).subscribe(()=> {
-      console.log('user logged in');
-    }, error => {
+    this.accountService.login(this.loginForm.value).subscribe(() => {
+      this.router.navigateByUrl('/shop');
+    }, error =>{
       console.log(error);
-    });
+    })
   }
 }

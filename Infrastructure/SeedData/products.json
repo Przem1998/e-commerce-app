@@ -1,6 +1,6 @@
 [
   {
-    "Name": "Kolano ocynkowane 1/2",
+    "Name": "Kolano ocynkowane",
     "Description": "zastosowanie: instalacje hydrauliczne dla wody pitnej (plus innych cieczy nieagresywnych), układy centralnego ogrzewania, instalacje gazowe, także sprężonego powietrza (gazy nieagresywne), instalacje nawadniające, budownictwo i konstrukcje Przekrój : 1/2 cala",
     "Price": 2.15,
     "PictureUrl": "images/products/kolano.png",
@@ -8,7 +8,7 @@
     "ProductSizeId": 2
   },
   {
-    "Name": "Kolano ocynkowane 3/4",
+    "Name": "Kolano ocynkowane",
     "Description": "zastosowanie: instalacje hydrauliczne dla wody pitnej (plus innych cieczy nieagresywnych), układy centralnego ogrzewania, instalacje gazowe, także sprężonego powietrza (gazy nieagresywne), instalacje nawadniające, budownictwo i konstrukcje Przekrój : 1/2 cala",
     "Price": 2.59,
     "PictureUrl": "images/products/kolano.png",
@@ -16,7 +16,7 @@
     "ProductSizeId": 3
   },
   {
-    "Name": "Kolano ocynkowane 1",
+    "Name": "Kolano ocynkowane",
     "Description": "zastosowanie: instalacje hydrauliczne dla wody pitnej (plus innych cieczy nieagresywnych), układy centralnego ogrzewania, instalacje gazowe, także sprężonego powietrza (gazy nieagresywne), instalacje nawadniające, budownictwo i konstrukcje Przekrój : 1/2 cala",
     "Price": 4.39,
     "PictureUrl": "images/products/kolano.png",
@@ -24,7 +24,7 @@
     "ProductSizeId": 4
   },
   {
-    "Name": "Kolano ocynkowane 1 1/4",
+    "Name": "Kolano ocynkowane",
     "Description": "zastosowanie: instalacje hydrauliczne dla wody pitnej (plus innych cieczy nieagresywnych), układy centralnego ogrzewania, instalacje gazowe, także sprężonego powietrza (gazy nieagresywne), instalacje nawadniające, budownictwo i konstrukcje Przekrój : 1/2 cala",
     "Price": 8.4,
     "PictureUrl": "images/products/kolano.png",
@@ -32,7 +32,7 @@
     "ProductSizeId": 5
   },
   {
-    "Name": "kolano nyplowe ocynkowane 3/8",
+    "Name": "kolano nyplowe ocynkowane",
     "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
     "Price": 2.7,
     "PictureUrl": "images/products/kolanoNyplowe.png",
@@ -40,7 +40,7 @@
     "ProductSizeId": 1
   },
   {
-    "Name": "kolano nyplowe ocynkowane 1 1/4",
+    "Name": "kolano nyplowe ocynkowane",
     "Description": "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
     "Price": 8.7,
     "PictureUrl": "images/products/kolanoNyplowe.png",
@@ -48,7 +48,7 @@
     "ProductSizeId": 5
   },
   {
-    "Name": "Nypel ocynkowany 2",
+    "Name": "Nypel ocynkowany",
     "Description": "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
     "Price": 10.5,
     "PictureUrl": "images/products/nypel.png",
@@ -56,7 +56,7 @@
     "ProductSizeId": 7
   },
   {
-    "Name": "Nypel mosiężny 1/2",
+    "Name": "Nypel mosiężny",
     "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
     "Price": 3,
     "PictureUrl": "images/products/nypelMosiezny.png",
@@ -64,7 +64,7 @@
     "ProductSizeId": 2
   },
   {
-    "Name": "Nypel mosiężny 1",
+    "Name": "Nypel mosiężny",
     "Description": "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
     "Price": 7.7,
     "PictureUrl": "images/products/nypelMosiezny.png",
@@ -72,7 +72,7 @@
     "ProductSizeId": 4
   },
   {
-    "Name": "Nypel mosiężny 3/4",
+    "Name": "Nypel mosiężny",
     "Description": "Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.",
     "Price": 4.3,
     "PictureUrl": "images/products/nypelMosiezny.png",
@@ -80,7 +80,7 @@
     "ProductSizeId": 3
   },
   {
-    "Name": "Nypel ocynkowany 1",
+    "Name": "Nypel ocynkowany",
     "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
     "Price": 6,
     "PictureUrl": "images/products/nypel.png",
@@ -88,7 +88,7 @@
     "ProductSizeId": 4
   },
   {
-    "Name": "Nypel ocynkowany 3/4",
+    "Name": "Nypel ocynkowany",
     "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa.",
     "Price": 5,
     "PictureUrl": "images/products/nypel.png",
@@ -96,7 +96,7 @@
     "ProductSizeId": 3
   },
   {
-    "Name": "Trójnik ocynkowany 1/2",
+    "Name": "Trójnik ocynkowany",
     "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
     "Price": 2.5,
     "PictureUrl": "images/products/trojnik.png",
@@ -104,7 +104,7 @@
     "ProductSizeId": 2
   },
   {
-    "Name": "Trójnik ocynkowany 1",
+    "Name": "Trójnik ocynkowany",
     "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
     "Price": 8.1,
     "PictureUrl": "images/products/trojnik.png",
@@ -112,7 +112,7 @@
     "ProductSizeId": 4
   },
   {
-    "Name": "Zawór kulowy 1 1/2",
+    "Name": "Zawór kulowy",
     "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
     "Price": 59,
     "PictureUrl": "images/products/zaworKulowy.png",
@@ -120,7 +120,7 @@
     "ProductSizeId": 6
   },
   {
-    "Name": "Zawór grzybkowy 2",
+    "Name": "Zawór grzybkowy",
     "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
     "Price": 100,
     "PictureUrl": "images/products/zaworGrzybkowy.png",
@@ -128,7 +128,7 @@
     "ProductSizeId": 7
   },
   {
-    "Name": "Rura ocynk 1",
+    "Name": "Rura ocynk",
     "Description": "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
     "Price": 19,
     "PictureUrl": "images/products/ruraOcynk.png",
@@ -136,7 +136,7 @@
     "ProductSizeId": 4
   },
   {
-    "Name": "Rura czarna 1/2",
+    "Name": "Rura czarna",
     "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
     "Price": 7,
     "PictureUrl": "images/products/rura.png",
