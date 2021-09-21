@@ -46,6 +46,7 @@ export class AccountService {
     .pipe(
       map((user: IUser) => {
         localStorage.setItem('token',user.token);
+        this.currentUserSource.next(user);
       })
     );
   }
