@@ -7,10 +7,10 @@
         <!-- <a class="p-2" routerLink="/test-error" routerLinkActive="active">Errors</a> -->
     </nav>
     <div class="d-flex align-items-center">
-        <!-- <a routerLink="/basket" class="position-relative">
+        <a routerLink="/basket" class="position-relative">
             <i class="fa fa-shopping-cart fa-2x mr-5 text-dark"></i>
             <div *ngIf="(basket$ | async) as basket" class="cart-no">{{basket.items.length}}</div>
-        </a> -->
+        </a>
         <ng-container *ngIf="(currentUser$ | async) === null">
             <a routerLink="/account/logowanie" class="btn btn-outline-secondary mr-2" href="#">Zaloguj się </a>
             <a routerLink="/account/rejestracja" class="btn btn-outline-secondary mr-3" href="#">Rejestracja</a>
