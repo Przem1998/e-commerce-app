@@ -1,7 +1,8 @@
 using System;
-using Core.OrderAggregate;
 using Microsoft.EntityFrameworkCore;
+//using Core.Entities.OrderAggregate;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Core.OrderAggregate;
 
 namespace Infrastructure.Data.Config
 {
