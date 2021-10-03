@@ -1,7 +1,8 @@
-namespace Core.OrderAggregate
+namespace Core.Entities.OrderAggregate
 {
     public class Address
     {
+        //for EF, because EF needs a parametr list constructor during migration
         public Address()
         {
         }
@@ -20,5 +21,6 @@ namespace Core.OrderAggregate
         public string Street { get; set; }
         public string City { get; set; }
         public string PostCode { get; set; }
+       
     }
 }

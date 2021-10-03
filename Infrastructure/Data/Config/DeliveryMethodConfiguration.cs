@@ -1,7 +1,6 @@
+using Core.Entities.OrderAggregate;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-//using Core.Entities.OrderAggregate;
-using Core.OrderAggregate;
 
 namespace Infrastructure.Data.Config
 {
@@ -9,7 +8,7 @@ namespace Infrastructure.Data.Config
     {
         public void Configure(EntityTypeBuilder<DeliveryMethod> builder)
         {
-           builder.Property(d => d.Price).HasColumnType("decimal(18,2)");
+            builder.Property(d => d.Price).HasColumnType("decimal(18,2)");
         }
     }
 }
