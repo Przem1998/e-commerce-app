@@ -1,0 +1,25 @@
+<div class="mt-4" [formGroup]="checkoutForm">
+    <div class="d-flex justify-content-between align-items-center">
+        <h5>Adres dostawy</h5>
+        <button class="btn btn-outline-success mb-3">
+            Zapisz jako adres domyślny
+        </button>
+    </div>
+    <div class="row" formGroupName="addressForm">
+        <div class="form-group col-5">
+            <app-text-input [label]="'Imię'" formControlName="firstName"></app-text-input>
+        </div>
+        <div class="form-group col-5">
+            <app-text-input [label]="'Nazwisko'" formControlName="lastName"></app-text-input>
+        </div>
+        <div class="form-group col-10">
+            <app-text-input [label]="'Ulica i numer domu/mieszkania'" formControlName="street"></app-text-input>
+        </div>
+        <div class="form-group col-5">
+            <app-text-input [label]="'Kod pocztowy'" formControlName="postcode"></app-text-input>
+        </div>
+        <div class="form-group col-5">
+            <app-text-input [label]="'Miejscowość'" formControlName="city"></app-text-input>
+        </div>
+    </div>
+</div>
