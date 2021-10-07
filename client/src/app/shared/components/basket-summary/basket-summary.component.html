@@ -1,0 +1,53 @@
+  <div class="table responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th class="border-0"  [class.bg-light]="isBasket" scope="col">
+                                            <div class="p-2 px-3 text-uppercase">Produkt</div>
+                                        </th>
+                                    
+                                        <th scope="col" class="border-0" [class.bg-light]="isBasket">
+                                            <div class="py-2 text-uppercase">Cena</div>
+                                        </th>    
+                                        <th  scope="col" class="border-0" [class.bg-light]="isBasket">
+                                            <div class="py-2 text-uppercase">Ilość</div>
+                                        </th>
+                                        <th scope="col" class="border-0" [class.bg-light]="isBasket">
+                                            <div class="py-2 text-uppercase">Suma</div>
+                                        </th>
+                                        <th *ngIf="isBasket" scope="col" class="border-0 bg-light">
+                                            <div class="py-2 text-uppercase">Usuń</div>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let item of (basket$ | async).items">
+                                        <th scope="row">
+                                            <div class="p-2">
+                                                <img src="{{item.pictureUrl}}" alt="{{item.productName}}" style="max-width: 100px;" class="img-fluid">
+                                                <div class="ml-3 d-inline-block align-middle">
+                                                    <h5 class="mb-8"><a routerLink="/shop/{{item.id}}" class="text-dark">{{item.productName}} {{item.productSize}}</a></h5>
+                                                    <span class="text-muted font-weight-normal font-italic d-block">Typ: {{item.productType}}</span>
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <td class="align-middle">{{item.price}} zł</td>
+                                        <td class="align-middle">
+                                            <div class="d-flex align-items-center">
+                                                <i *ngIf="isBasket" (click)="decrementItemQuantity(item)" class="fa fa-minus-circle text-warning mr-2" style="cursor: pointer; font-size: 2em;"></i>
+                                                <span class="font-weight-bold" style="font-size: 1.5em;">{{item.quantity}}</span>
+                                                <i *ngIf="isBasket" (click)="incrementItemQuantity(item)" class="fa fa-plus-circle text-warning mx-2" style="cursor: pointer; font-size: 2em;"></i>
+                                            </div>
+                                        </td>
+                                        <td class="align-middle">
+                                            <span>{{getValueMultiplyPriceByQuantity(item.quantity, item.price)}} zł</span> 
+                                        </td>
+                                        <td class="align-middle text-center">
+                                            <a class="text-danger">
+                                                <i *ngIf="isBasket" (click)="removeBasketItem(item)" class="fa fa-trash" style="font-size:2em"></i> 
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>

@@ -7,7 +7,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12 py-5 mb-1">
-                        <div class="table responsive">
+                    <!--    <div class="table responsive">
                             <table class="table">
                                 <thead>
                                     <tr>
@@ -58,7 +58,13 @@
                                     </tr>
                                 </tbody>
                             </table>
-                        </div>
+                        </div> -->
+                        <app-basket-summary
+                            (increment) = "incrementItemQuantity($event)"
+                            (decrement) = "decrementItemQuantity($event)"
+                            (remove) = "removeBasketItem($event)"
+                            [aproxymate] = "getValueMultiplyPriceByQuantity"
+                        ></app-basket-summary>
                     </div>
                 </div>
                 <div class="row">

@@ -25,8 +25,8 @@ export class BasketComponent implements OnInit {
   decrementItemQuantity(item: IBasketItem){
     this.basketService.decrementItemQuantity(item);
   }
-  getValueMultiplyPriceByQuantity(price: number, quantity: number) {
-    return (price * quantity).toFixed(2);
+  getValueMultiplyPriceByQuantity(price: number, quantity: number) : string {
+    return this.basketService.getValueMultiplyPriceByQuantity(price,quantity);
   }
 
 }

@@ -97,6 +97,9 @@ export class BasketService {
     }
    
   }
+  getValueMultiplyPriceByQuantity(price: number, quantity: number) {
+    return (price * quantity).toFixed(2);
+  }
   removeItemFromBasket(item: IBasketItem) {
     const basket = this.getCurrentBasketValue();
     if(basket.items.some(x => x.id === item.id)){
