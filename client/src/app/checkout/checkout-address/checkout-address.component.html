@@ -1,7 +1,7 @@
 <div class="mt-4" [formGroup]="checkoutForm">
     <div class="d-flex justify-content-between align-items-center">
         <h5>Adres dostawy</h5>
-        <button class="btn btn-outline-success mb-3">
+        <button (click)="saveUserAddress()" [disabled]="!checkoutForm.get('addressForm').valid || !checkoutForm.get('addressForm').dirty" class="btn btn-outline-success mb-3">
             Zapisz jako adres domyślny
         </button>
     </div>
@@ -16,10 +16,18 @@
             <app-text-input [label]="'Ulica i numer domu/mieszkania'" formControlName="street"></app-text-input>
         </div>
         <div class="form-group col-5">
-            <app-text-input [label]="'Kod pocztowy'" formControlName="postcode"></app-text-input>
+            <app-text-input [label]="'Kod pocztowy'" formControlName="postCode"></app-text-input>
         </div>
         <div class="form-group col-5">
             <app-text-input [label]="'Miejscowość'" formControlName="city"></app-text-input>
         </div>
     </div>
+</div>
+<div class="float-none d-flex justify-content-between flex-column flex-lg-row mb-5">
+    <button class="btn btn-outline-primary" routerLink="/basket">
+        <i class="fa fa-angle-left"></i> Wróć do koszyka
+    </button>
+    <button class="btn btn-outline-primary" cdkStepperNext>
+        Przejdź do dostaw <i class="fa fa-angle-right"></i> 
+    </button>
 </div>

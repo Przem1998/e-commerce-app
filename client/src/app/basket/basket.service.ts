@@ -4,6 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { Basket, IBasket, IBasketItem, IBasketTotals } from '../shared/models/basket';
+import { IDeliveryMethod } from '../shared/models/deliveryMethod';
 import { IProduct } from '../shared/models/product';
 
 @Injectable({
@@ -15,8 +16,15 @@ export class BasketService {
   basket$ = this.basketSource.asObservable();
   private basketTotalSource = new BehaviorSubject<IBasketTotals>(null);
   basketTotal$ = this.basketTotalSource.asObservable();
+  shipping =0;
 
   constructor(private http: HttpClient) { }
+
+  setShippingPrice(deliveryMethod : IDeliveryMethod){
+    this.shipping = deliveryMethod.price;
+    this.calculateTotals()
+  }
+
   getBasket(id: string){
     return this.http.get(this.baseUrl + 'basket?id=' + id ).pipe(
       map((basket: IBasket) => {
@@ -74,10 +82,11 @@ export class BasketService {
   }
   private calculateTotals(){
     const basket = this.getCurrentBasketValue();
-    const shipping = 0;
-    const middle = basket.items.reduce((a,b) =>  b.price * b.quantity + a, 0).toFixed(2);
-    const subtotal  = Number(middle);
-    const total= subtotal + shipping;
+    const shipping = this.shipping;
+    let middleCalc = basket.items.reduce((a,b) =>  b.price * b.quantity + a, 0).toFixed(2);
+    const subtotal  = Number(middleCalc);
+    middleCalc = (subtotal + shipping).toFixed(2);
+    const total= Number(middleCalc);
     this.basketTotalSource.next({shipping, total, subtotal});
   }
   incrementItemQuantity(item: IBasketItem){
@@ -99,7 +108,7 @@ export class BasketService {
   }
   getValueMultiplyPriceByQuantity(price: number, quantity: number) {
     return (price * quantity).toFixed(2);
-  }
+  } 
   removeItemFromBasket(item: IBasketItem) {
     const basket = this.getCurrentBasketValue();
     if(basket.items.some(x => x.id === item.id)){
@@ -111,6 +120,13 @@ export class BasketService {
       }
     }
   }
+
+  deleteLocalBasket(id: string){
+    this.basketSource.next(null);
+    this.basketTotalSource.next(null);
+    localStorage.removeItem(id);
+  }
+  
   deleteBasket(basket: IBasket) {
     return this.http.delete(this.baseUrl+'basket?id=' +basket.id).subscribe(() => {
       this.basketSource.next(null);
