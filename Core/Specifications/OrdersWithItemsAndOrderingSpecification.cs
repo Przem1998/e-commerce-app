@@ -10,7 +10,7 @@ namespace Core.Specifications
         {
             AddInclude(o => o.OrderItems);
             AddInclude(o => o.DeliveryMethod);
-            AddOrderByDesc(o => o.OrderDate);
+            AddOrderByDesc(o=>o.OrderDate);
         }
 
         //individual order
@@ -18,7 +18,6 @@ namespace Core.Specifications
         {
             AddInclude(o => o.OrderItems);
             AddInclude(o => o.DeliveryMethod);
-            AddOrderByDesc(o => o.OrderDate);
         }
     }
 }

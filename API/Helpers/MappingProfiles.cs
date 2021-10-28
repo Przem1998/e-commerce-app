@@ -19,13 +19,13 @@ namespace API.Helpers
             CreateMap<BasketItemDto,BasketItem>();
             CreateMap<AddressDto, Core.Entities.OrderAggregate.Address>();
             CreateMap<Order, OrderToReturnDto>()
-                    .ForMember(d => d.DeliveryMethod, o => o.MapFrom(s => s.DeliveryMethod.ShortName))
-                    .ForMember(d => d.ShippingPrice, o => o.MapFrom(s => s.DeliveryMethod.Price));
+                .ForMember(d => d.DeliveryMethod, o => o.MapFrom(s => s.DeliveryMethod.ShortName))
+                .ForMember(d => d.ShippingPrice, o => o.MapFrom(s => s.DeliveryMethod.Price));
             CreateMap<OrderItem, OrderItemDto>()
-                    .ForMember(d => d.ProductId, o => o.MapFrom(s => s.ItemOrdered.Id))
-                    .ForMember(d => d.ProductName, o => o.MapFrom(s => s.ItemOrdered.Name))
-                    .ForMember(d => d.PictureUrl, o => o.MapFrom(s => s.ItemOrdered.PictureUrl))
-                    .ForMember(d => d.PictureUrl, o=> o.MapFrom<OrderItemResolver>());
+                .ForMember(d => d.Id, o => o.MapFrom(s => s.ItemOrdered.Id))
+                .ForMember(d => d.Name, o => o.MapFrom(s => s.ItemOrdered.Name))
+                .ForMember(d => d.PictureUrl, o => o.MapFrom(s => s.ItemOrdered.PictureUrl))
+                .ForMember(d => d.PictureUrl, o => o.MapFrom<OrderItemResolver>());
         }
     }
 }
