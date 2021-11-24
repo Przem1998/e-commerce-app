@@ -11,10 +11,9 @@ namespace API.Dtos
         public DateTimeOffset OrderDate { get; set; }
         public Address ShipToAddress { get; set; }
         public string DeliveryMethod { get; set; }
-        public decimal ShippingPrice { get; set; }
+		public decimal ShippingPrice { get; set; }
         public IReadOnlyList<OrderItemDto> OrderItems { get; set; }
         public decimal Subtotal { get; set; }
         public string Status { get; set; }
-
     }
 }

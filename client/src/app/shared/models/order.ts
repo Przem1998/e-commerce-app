@@ -8,8 +8,8 @@ export interface IOdrderToCreate {
 
 
 export interface IOrderItem {
-    productId: number;
-    productName: string;
+    id: number;
+    name: string;
     pictureUrl: string;
     price: number;
     quantity: number;

@@ -15,4 +15,7 @@ export class OrdersService {
   getOrderDetailed(id:number){
     return this.http.get(this.baseurl+'order/'+id);
   }
+  getValueMultiplyPriceByQuantity(price: number, quantity: number) {
+    return (price * quantity).toFixed(2);
+  } 
 }

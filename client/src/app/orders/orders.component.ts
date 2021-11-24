@@ -16,11 +16,14 @@ export class OrdersComponent implements OnInit {
   }
   getOrders() {
     this.orderService.getOrderForUser().subscribe((orders : IOrder[]) => {
+      
       this.orders = orders;
     }, error => {
       console.log(error);
     });
   }
-
+  getValue(subtotal: number, shipping: number) {
+    return (subtotal + shipping).toFixed(2);
+  } 
 
 }

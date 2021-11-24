@@ -13,7 +13,7 @@
                 <tbody *ngFor="let order of orders" routerLink="/orders/{{order.id}}">
                     <th>#{{order.id}}</th>
                     <th>{{order.orderDate | date: 'medium'}}</th>
-                    <td>{{order.subtotal}} zł</td>
+                    <td>{{ getValue(order.shippingPrice,order.subtotal) }} zł</td>
                     <td>{{order.status}}</td>
                 </tbody>
             </table>

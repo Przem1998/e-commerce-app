@@ -19,10 +19,12 @@ export class OrderDetailsComponent implements OnInit {
     this.ordersService.getOrderDetailed(+this.route.snapshot.paramMap.get('id'))
     .subscribe((order: IOrder) =>{
       this.order= order;
+      console.log(this.order.orderItems);
       this.breadcrumbService.set('@OrderDetailed', `Zamówienie nr ${order.id} - ${order.status}`);
     }, error => {
       console.log(error);
     })
   }
+  
 
 }

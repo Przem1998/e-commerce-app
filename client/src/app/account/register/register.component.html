@@ -2,6 +2,23 @@
     <div class="col-3">
          <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
              <h1 class="h3 mb-3 font-weight-normal">Zarejestruj się</h1>
+
+  
+                <app-text-input [label]="'Imię'" formControlName="firstName"></app-text-input>
+
+                <app-text-input [label]="'Nazwisko'" formControlName="lastName"></app-text-input>
+      
+            <div class="form-group col-10">
+                <app-text-input [label]="'Ulica i numer'" formControlName="street"></app-text-input>
+            </div>
+            <div class="form-group col-5">
+                <app-text-input [label]="'Kod pocztowy'" formControlName="postCode"></app-text-input>
+            </div>
+            <div class="form-group col-5">
+                <app-text-input [label]="'Miejscowość'" formControlName="city"></app-text-input>
+            </div>
+
+
              <app-text-input  formControlName="displayName" [label]="'Nazwa użytkownika'"></app-text-input>
              <app-text-input  formControlName="email" [label]="'Adres email'"></app-text-input>
              <app-text-input  formControlName="password" [label]="'hasło'" [type]="'password'"></app-text-input>
