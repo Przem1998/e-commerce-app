@@ -1,5 +1,6 @@
 import { OnInit } from '@angular/core';
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
 import { AccountService } from './account/account.service';
 import { BasketService } from './basket/basket.service';
 
@@ -9,9 +10,12 @@ import { BasketService } from './basket/basket.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+  routes$: Observable<any[]>;
   title = 'Sklep hydrauliczny - beta';
 
 constructor(private basketService: BasketService, private accountService: AccountService){}
+
+
   ngOnInit(): void {
     this.loadBasket();
     this.loadCurrentUser();
