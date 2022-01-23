@@ -63,6 +63,7 @@ namespace API.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> PayuCallback(PayuCallback orderPayu)
         {
             //Validate signature

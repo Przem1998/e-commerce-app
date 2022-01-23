@@ -1,0 +1,33 @@
+.col{
+    max-width: 700px;
+}
+.formInputs{
+    margin-bottom: 50px;
+    min-height: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.city_postcode{
+    display: flex;
+    justify-content: space-between;
+    gap:20px;
+    .city{
+        flex-grow: 3;
+    }
+    .postcode{
+        flex-grow: 2;
+    }
+}
+
+.street_numbers{
+    display: flex;
+    justify-content: space-between;
+    gap:20px;
+    .street{
+        flex-grow: 2;
+    }
+    .houseNumber{width: 120px;} .apartmentNumber{width: 120px; }
+}

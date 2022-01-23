@@ -19,7 +19,7 @@ namespace Infrastructure.Identity
                    Address = new Address
                    {
                        FirstName = "Jan",
-                       LastName = "Kowalski",
+                       Surname = "Kowalski",
                        Street = "Daleka 10",
                        City = "Biała Podlaska",
                        PostCode = "21-500 Biała Podlaska"

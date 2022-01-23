@@ -95,16 +95,27 @@ namespace API.Controllers
             {
                 return new BadRequestObjectResult(new APIValidationErrorResponse{Errors = new [] {"Email address is in use"}});
             }
-            
+            var address = new Address{
+                    Street=registerDto.Street,
+                    HouseNumber=registerDto.HouseNumber,
+                    ApartmentNumber=registerDto.ApartmentNumber,
+                    City=registerDto.City,
+                    PostCode=registerDto.PostCode,
+                    
+                };
             var user = new AppUser
             {
-                DisplayName = registerDto.DisplayName,
+                DisplayName = registerDto.Name,
                 Email = registerDto.Email,
-                UserName = registerDto.DisplayName
+                Address= address,
+                UserName = registerDto.Email
             };
             var result = await _userManager.CreateAsync(user, registerDto.Password);
 
             if(!result.Succeeded) return BadRequest(new ApiResponse(400));
+            
+            user.Address = address;
+            await _userManager.UpdateAsync(user);
 
             return new UserDto
             {

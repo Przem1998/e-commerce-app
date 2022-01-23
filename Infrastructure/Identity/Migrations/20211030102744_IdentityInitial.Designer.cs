@@ -34,7 +34,7 @@ namespace Infrastructure.Identity.Migrations
                     b.Property<string>("FirstName")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("LastName")
+                    b.Property<string>("Surname")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("PostCode")
@@ -42,7 +42,15 @@ namespace Infrastructure.Identity.Migrations
 
                     b.Property<string>("Street")
                         .HasColumnType("TEXT");
+                        
+                    b.Property<string>("HouseNumber")
+                        .HasColumnType("TEXT");
+                        
+                    b.Property<string>("ApartmentNumber")
+                        .HasColumnType("TEXT");
 
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("TEXT");
                     b.HasKey("Id");
 
                     b.HasIndex("AppUserId")
