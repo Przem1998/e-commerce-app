@@ -100,8 +100,8 @@ namespace API.Controllers
                     HouseNumber=registerDto.HouseNumber,
                     ApartmentNumber=registerDto.ApartmentNumber,
                     City=registerDto.City,
+                    PhoneNumber=registerDto.PhoneNumber,
                     PostCode=registerDto.PostCode,
-                    
                 };
             var user = new AppUser
             {
@@ -113,9 +113,6 @@ namespace API.Controllers
             var result = await _userManager.CreateAsync(user, registerDto.Password);
 
             if(!result.Succeeded) return BadRequest(new ApiResponse(400));
-            
-            user.Address = address;
-            await _userManager.UpdateAsync(user);
 
             return new UserDto
             {
@@ -124,8 +121,5 @@ namespace API.Controllers
                 Email = user.Email
             };
         }
-
-      
-
     }
 }
