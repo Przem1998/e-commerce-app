@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { NavigationExtras, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { AccountService } from 'src/app/account/account.service';
 import { BasketService } from 'src/app/basket/basket.service';
 import { IBasket } from 'src/app/shared/models/basket';
 import { IOrder } from 'src/app/shared/models/order';
@@ -15,7 +16,7 @@ import { CheckoutService } from '../checkout.service';
 export class CheckoutPaymentComponent implements OnInit {
   @Input() checkoutForm: FormGroup;
 
-  constructor(private basketService: BasketService, private checkoutService: CheckoutService, private toastr: ToastrService, private router: Router) { }
+  constructor(private basketService: BasketService, private checkoutService: CheckoutService, private toastr: ToastrService, private router: Router, private account: AccountService) { }
 
   ngOnInit(): void {
   }
@@ -23,6 +24,9 @@ export class CheckoutPaymentComponent implements OnInit {
     const basket = this.basketService.getCurrentBasketValue();
     const orderToCreate = this.getOrderToCreate(basket);
     console.log(orderToCreate);
+
+
+
     this.checkoutService.createOrder(orderToCreate).subscribe((order: IOrder) => {
       this.toastr.success('Order created successfully');
       this.basketService.deleteLocalBasket(basket.id);
@@ -33,6 +37,27 @@ export class CheckoutPaymentComponent implements OnInit {
       this.toastr.error(error.message);
       console.log(error);
     });
+
+
+  }
+    // createPayment(){
+  //   return this.http.post(this.baseUrl+'payment/'+this.getCurrentBasketValue().id,{})
+  //   .pipe(
+  //     map((basket:IBasket)=>{
+  //       console.log(this.getCurrentBasketValue())
+  //       this.basketSource.next(basket);
+  //       console.log(this.getCurrentBasketValue());
+  //     })
+  //   );
+  // }
+  goToPayu(){
+    this.checkoutService.createPayment(this.getOrderToCreate(this.basketService.getCurrentBasketValue())).subscribe((response: any) =>{
+
+      window.open(response,"_blank");
+
+    }, error =>{
+      console.log(error);
+    });
   }
   private getOrderToCreate(basket: IBasket) {
     return{
@@ -40,5 +65,9 @@ export class CheckoutPaymentComponent implements OnInit {
       deliveryMethodId: +this.checkoutForm.get('deliveryForm').get('deliveryMethod').value,
       shipToAddress: this.checkoutForm.get('addressForm').value
     };
+  }
+
+  referenceToPayu(){
+    
   }
 }

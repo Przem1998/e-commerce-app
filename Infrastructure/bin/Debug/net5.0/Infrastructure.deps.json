@@ -12,6 +12,7 @@
           "Microsoft.AspNetCore.Identity": "2.2.0",
           "Microsoft.EntityFrameworkCore.Sqlite": "5.0.5",
           "Microsoft.IdentityModel.Tokens": "6.12.2",
+          "Newtonsoft.Json": "13.0.1",
           "StackExchange.Redis": "2.2.62",
           "System.IdentityModel.Tokens.Jwt": "6.12.2"
         },
@@ -561,6 +562,14 @@
           }
         }
       },
+      "Newtonsoft.Json/13.0.1": {
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "13.0.0.0",
+            "fileVersion": "13.0.1.25517"
+          }
+        }
+      },
       "Pipelines.Sockets.Unofficial/2.2.0": {
         "dependencies": {
           "System.IO.Pipelines": "5.0.0"
@@ -872,7 +881,8 @@
       },
       "Core/1.0.0": {
         "dependencies": {
-          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "5.0.9"
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "5.0.9",
+          "Newtonsoft.Json": "13.0.1"
         },
         "runtime": {
           "Core.dll": {}
@@ -1228,6 +1238,13 @@
       "sha512": "sha512-Bh6blKG8VAKvXiLe2L+sEsn62nc1Ij34MrNxepD2OCrS5cpCwQa9MeLyhVQPQ/R4Wlzwuy6wMK8hLb11QPDRsQ==",
       "path": "microsoft.win32.systemevents/5.0.0",
       "hashPath": "microsoft.win32.systemevents.5.0.0.nupkg.sha512"
+    },
+    "Newtonsoft.Json/13.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
+      "path": "newtonsoft.json/13.0.1",
+      "hashPath": "newtonsoft.json.13.0.1.nupkg.sha512"
     },
     "Pipelines.Sockets.Unofficial/2.2.0": {
       "type": "package",

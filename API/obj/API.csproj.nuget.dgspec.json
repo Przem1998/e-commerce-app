@@ -1,21 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Desktop\\projekt_inzynierski\\plumber\\api\\API.csproj": {}
+    "C:\\Users\\User\\Desktop\\plumber\\api\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Desktop\\projekt_inzynierski\\plumber\\api\\API.csproj": {
+    "C:\\Users\\User\\Desktop\\plumber\\api\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\projekt_inzynierski\\plumber\\api\\API.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\plumber\\api\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\User\\Desktop\\projekt_inzynierski\\plumber\\api\\API.csproj",
+        "projectPath": "C:\\Users\\User\\Desktop\\plumber\\api\\API.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\projekt_inzynierski\\plumber\\api\\obj\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\plumber\\api\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -28,8 +32,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\User\\Desktop\\projekt_inzynierski\\plumber\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\User\\Desktop\\projekt_inzynierski\\plumber\\Infrastructure\\Infrastructure.csproj"
+              "C:\\Users\\User\\Desktop\\plumber\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\User\\Desktop\\plumber\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }
@@ -62,6 +66,10 @@
               "target": "Package",
               "version": "[5.0.5, )"
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[5.6.3, )"
@@ -77,6 +85,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[5.0.13, 5.0.13]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -85,22 +99,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\User\\Desktop\\projekt_inzynierski\\plumber\\Core\\Core.csproj": {
+    "C:\\Users\\User\\Desktop\\plumber\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\projekt_inzynierski\\plumber\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\plumber\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\User\\Desktop\\projekt_inzynierski\\plumber\\Core\\Core.csproj",
+        "projectPath": "C:\\Users\\User\\Desktop\\plumber\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\projekt_inzynierski\\plumber\\Core\\obj\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\plumber\\Core\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -128,6 +146,10 @@
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.9, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
             }
           },
           "imports": [
@@ -145,22 +167,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\User\\Desktop\\projekt_inzynierski\\plumber\\Infrastructure\\Infrastructure.csproj": {
+    "C:\\Users\\User\\Desktop\\plumber\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\projekt_inzynierski\\plumber\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\plumber\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "C:\\Users\\User\\Desktop\\projekt_inzynierski\\plumber\\Infrastructure\\Infrastructure.csproj",
+        "projectPath": "C:\\Users\\User\\Desktop\\plumber\\Infrastructure\\Infrastructure.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\projekt_inzynierski\\plumber\\Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\plumber\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -173,8 +199,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\User\\Desktop\\projekt_inzynierski\\plumber\\Core\\Core.csproj": {
-                "projectPath": "C:\\Users\\User\\Desktop\\projekt_inzynierski\\plumber\\Core\\Core.csproj"
+              "C:\\Users\\User\\Desktop\\plumber\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\User\\Desktop\\plumber\\Core\\Core.csproj"
               }
             }
           }
@@ -201,6 +227,10 @@
               "target": "Package",
               "version": "[6.12.2, )"
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
             "StackExchange.Redis": {
               "target": "Package",
               "version": "[2.2.62, )"
@@ -225,7 +255,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

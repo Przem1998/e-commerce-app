@@ -12,6 +12,7 @@ using AutoMapper;
 using API.Errors;
 using Microsoft.AspNetCore.Http;
 using API.Helpers;
+using System;
 
 namespace API.Controllers
 {
@@ -25,16 +26,20 @@ namespace API.Controllers
          
          private readonly IGenericRepository<ProductSize> _productSizesRepository;
          private readonly IMapper _mapper;
+        private readonly IUnitOfWork _unitOfWork;
+
         public ProductsController(IGenericRepository<Product> productsRepository,
                                   IGenericRepository<ProductSize> productSizesRepository,
                                   IGenericRepository<ProductType> productTypesRepository,
-                                  IMapper mapper
+                                  IMapper mapper,
+                                  IUnitOfWork unitOfWork
                                  )
         {
             _productsRepository=productsRepository;
             _productSizesRepository=productSizesRepository;
             _productTypesRepository = productTypesRepository;
             _mapper=mapper;
+            _unitOfWork = unitOfWork;
         }
 
     [HttpGet]
@@ -84,6 +89,30 @@ namespace API.Controllers
     {
         return Ok(await _productTypesRepository.ListAllAsync());
     }
+    
+    [HttpPost]
+    public async Task<ActionResult<Product>> AddProduct(ProductDto dto)
+    {
+        var data = await _productsRepository.ListAllAsync();
+        var id = data.Count;
+        var productTypes= await _productTypesRepository.ListAllAsync();
+        var productSizes= await _productSizesRepository.ListAllAsync();
+        var typeId =(productTypes.Where(x=> x.Name== dto.ProductType).Select(x=>x.Id)).ToArray();
+        var sizeId =(productSizes.Where(x=> x.Size== dto.ProductSize).Select(x=>x.Id)).ToArray();
+        var product= new Product{
+            Id= id+1,
+            Name= dto.Name,
+            Description= dto.Description,
+            Price= dto.Price,
+            PictureUrl= dto.PictureUrl,
+            ProductSizeId=Convert.ToInt16(sizeId[0]),
+            ProductTypeId=Convert.ToInt16(typeId[0])
 
+        };
+        _unitOfWork.Repository<Product>().Add(product);
+        var result = await _unitOfWork.Complete();
+        // _productsRepository.Add(product);
+        return Ok(await _productsRepository.GetByIdAsync(id+1));
+    }
 }
 }

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, share } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { Basket, IBasket, IBasketItem, IBasketTotals } from '../shared/models/basket';
 import { IDeliveryMethod } from '../shared/models/deliveryMethod';
@@ -20,15 +20,31 @@ export class BasketService {
 
   constructor(private http: HttpClient) { }
 
+  // createPayment(){
+  //   return this.http.post(this.baseUrl+'payment/'+this.getCurrentBasketValue().id,{})
+  //   .pipe(
+  //     map((basket:IBasket)=>{
+  //       console.log(this.getCurrentBasketValue())
+  //       this.basketSource.next(basket);
+  //       console.log(this.getCurrentBasketValue());
+  //     })
+  //   );
+  // }
+
   setShippingPrice(deliveryMethod : IDeliveryMethod){
     this.shipping = deliveryMethod.price;
-    this.calculateTotals()
+    const basket= this.getCurrentBasketValue();
+    basket.deliveryMethodId= deliveryMethod.id;
+    basket.shippingPrice=deliveryMethod.price;
+    this.calculateTotals();
+    this.setBasket(basket);
   }
 
   getBasket(id: string){
     return this.http.get(this.baseUrl + 'basket?id=' + id ).pipe(
       map((basket: IBasket) => {
         this.basketSource.next(basket);
+        this.shipping=basket.shippingPrice;
         this.calculateTotals();
         console.log(this.getCurrentBasketValue());
       })

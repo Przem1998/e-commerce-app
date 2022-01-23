@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
+import { IBasket } from '../shared/models/basket';
 import { IDeliveryMethod } from '../shared/models/deliveryMethod';
 import { IOdrderToCreate } from '../shared/models/order';
 
@@ -16,6 +17,9 @@ export class CheckoutService {
   createOrder(order: IOdrderToCreate){
     return this.http.post(this.baseUrl + 'order', order);
   }
+  createPayment(order: IOdrderToCreate){
+    return this.http.post(this.baseUrl+'payment',order);
+  }
 
   getDeliveryMethods(){
     return this.http.get(this.baseUrl + 'order/deliveryMethods').pipe(
@@ -24,4 +28,5 @@ export class CheckoutService {
       })
     );
   }
+
 }

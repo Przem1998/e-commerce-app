@@ -2,7 +2,6 @@ C:\Users\User\Desktop\projekt_inzynierski\plumber\Core\bin\Debug\net5.0\Core.dep
 C:\Users\User\Desktop\projekt_inzynierski\plumber\Core\bin\Debug\net5.0\Core.dll
 C:\Users\User\Desktop\projekt_inzynierski\plumber\Core\bin\Debug\net5.0\ref\Core.dll
 C:\Users\User\Desktop\projekt_inzynierski\plumber\Core\bin\Debug\net5.0\Core.pdb
-C:\Users\User\Desktop\projekt_inzynierski\plumber\Core\obj\Debug\net5.0\Core.csprojAssemblyReference.cache
 C:\Users\User\Desktop\projekt_inzynierski\plumber\Core\obj\Debug\net5.0\Core.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\User\Desktop\projekt_inzynierski\plumber\Core\obj\Debug\net5.0\Core.AssemblyInfoInputs.cache
 C:\Users\User\Desktop\projekt_inzynierski\plumber\Core\obj\Debug\net5.0\Core.AssemblyInfo.cs
@@ -34,3 +33,16 @@ C:\Users\User\Desktop\e-commerce-app\Core\obj\Debug\net5.0\Core.csproj.CoreCompi
 C:\Users\User\Desktop\e-commerce-app\Core\obj\Debug\net5.0\Core.dll
 C:\Users\User\Desktop\e-commerce-app\Core\obj\Debug\net5.0\ref\Core.dll
 C:\Users\User\Desktop\e-commerce-app\Core\obj\Debug\net5.0\Core.pdb
+C:\Users\User\Desktop\projekt_inzynierski\plumber\Core\obj\Debug\net5.0\Core.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\plumber\Core\bin\Debug\net5.0\Core.deps.json
+C:\Users\User\Desktop\plumber\Core\bin\Debug\net5.0\Core.dll
+C:\Users\User\Desktop\plumber\Core\bin\Debug\net5.0\ref\Core.dll
+C:\Users\User\Desktop\plumber\Core\bin\Debug\net5.0\Core.pdb
+C:\Users\User\Desktop\plumber\Core\obj\Debug\net5.0\Core.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\plumber\Core\obj\Debug\net5.0\Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\plumber\Core\obj\Debug\net5.0\Core.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\plumber\Core\obj\Debug\net5.0\Core.AssemblyInfo.cs
+C:\Users\User\Desktop\plumber\Core\obj\Debug\net5.0\Core.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\plumber\Core\obj\Debug\net5.0\Core.dll
+C:\Users\User\Desktop\plumber\Core\obj\Debug\net5.0\ref\Core.dll
+C:\Users\User\Desktop\plumber\Core\obj\Debug\net5.0\Core.pdb

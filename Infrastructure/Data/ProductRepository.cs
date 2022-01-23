@@ -44,5 +44,11 @@ namespace Infrastructure.Data
                         .Include(p=>p.ProductType)
                         .FirstOrDefaultAsync(p=>p.Id==id);
         }
+
+        public Task<Product> AddProduct(Product product)
+        {
+            
+            throw new System.NotImplementedException();
+        }
     }
 }
