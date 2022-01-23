@@ -1,7 +1,9 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using Core.Entities;
@@ -77,9 +79,7 @@ namespace Infrastructure.Services
         public async Task<string> GetBearer()
         {
             AuthDeserialize deserializeAuth;
-
-
-           using(HttpClient httpClient = new HttpClient())
+            using(HttpClient httpClient = new HttpClient())
             {
             var data = new[]
             {
@@ -100,5 +100,15 @@ namespace Infrastructure.Services
         }
 
         public string GetOrderUrlPayu() => _config["PayuSettings:order_url"];
+
+        public string GetSignature(string input, string algorithm)
+        {
+           var hashAlgorithm = (HashAlgorithm)CryptoConfig.CreateFromName(algorithm);
+           Byte[] inputBytes = Encoding.UTF8.GetBytes(input);
+           Byte[] hashedBytes = hashAlgorithm.ComputeHash(inputBytes);
+           return BitConverter.ToString(hashedBytes).Replace("-",string.Empty).ToLower();
+        }
+
+    
     }
 }

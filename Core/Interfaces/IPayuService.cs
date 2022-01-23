@@ -11,6 +11,9 @@ namespace Core.Interfaces
         Task<string> GetBearer();
         Task<OrderPayu> CreateOrder(Order order, string basketId);
         string GetOrderUrlPayu();
+        string GetSignature(string input, string algorithm);
+
+     
 
     }
 }
