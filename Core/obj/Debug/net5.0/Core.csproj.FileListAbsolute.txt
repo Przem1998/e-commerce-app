@@ -46,3 +46,15 @@ C:\Users\User\Desktop\plumber\Core\obj\Debug\net5.0\Core.csproj.CoreCompileInput
 C:\Users\User\Desktop\plumber\Core\obj\Debug\net5.0\Core.dll
 C:\Users\User\Desktop\plumber\Core\obj\Debug\net5.0\ref\Core.dll
 C:\Users\User\Desktop\plumber\Core\obj\Debug\net5.0\Core.pdb
+C:\Users\User\Desktop\plumber_kopia2\Core\bin\Debug\net5.0\Core.deps.json
+C:\Users\User\Desktop\plumber_kopia2\Core\bin\Debug\net5.0\Core.dll
+C:\Users\User\Desktop\plumber_kopia2\Core\bin\Debug\net5.0\ref\Core.dll
+C:\Users\User\Desktop\plumber_kopia2\Core\bin\Debug\net5.0\Core.pdb
+C:\Users\User\Desktop\plumber_kopia2\Core\obj\Debug\net5.0\Core.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\plumber_kopia2\Core\obj\Debug\net5.0\Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\plumber_kopia2\Core\obj\Debug\net5.0\Core.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\plumber_kopia2\Core\obj\Debug\net5.0\Core.AssemblyInfo.cs
+C:\Users\User\Desktop\plumber_kopia2\Core\obj\Debug\net5.0\Core.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\plumber_kopia2\Core\obj\Debug\net5.0\Core.dll
+C:\Users\User\Desktop\plumber_kopia2\Core\obj\Debug\net5.0\ref\Core.dll
+C:\Users\User\Desktop\plumber_kopia2\Core\obj\Debug\net5.0\Core.pdb

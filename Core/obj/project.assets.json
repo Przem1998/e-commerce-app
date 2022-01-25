@@ -784,11 +784,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\plumber\\Core\\Core.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Desktop\\plumber_kopia2\\Core\\Core.csproj",
       "projectName": "Core",
-      "projectPath": "C:\\Users\\User\\Desktop\\plumber\\Core\\Core.csproj",
+      "projectPath": "C:\\Users\\User\\Desktop\\plumber_kopia2\\Core\\Core.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\plumber\\Core\\obj\\",
+      "outputPath": "C:\\Users\\User\\Desktop\\plumber_kopia2\\Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"

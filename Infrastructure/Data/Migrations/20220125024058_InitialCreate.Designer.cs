@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Data.Migrations
 {
     [DbContext(typeof(StoreContext))]
-    [Migration("20211030115538_OrderEntityAdded")]
-    partial class OrderEntityAdded
+    [Migration("20220125024058_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -178,13 +178,16 @@ namespace Infrastructure.Data.Migrations
                             b1.Property<string>("FirstName")
                                 .HasColumnType("TEXT");
 
-                            b1.Property<string>("LastName")
+                            b1.Property<string>("PhoneNumber")
                                 .HasColumnType("TEXT");
 
                             b1.Property<string>("PostCode")
                                 .HasColumnType("TEXT");
 
                             b1.Property<string>("Street")
+                                .HasColumnType("TEXT");
+
+                            b1.Property<string>("Surname")
                                 .HasColumnType("TEXT");
 
                             b1.HasKey("OrderId");

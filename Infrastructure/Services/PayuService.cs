@@ -53,23 +53,32 @@ namespace Infrastructure.Services
                 };
                 productPayuItems.Add(productPayu);
             }
-
+        BuyerDeliveryPayu buyerDeliveryPayu = new BuyerDeliveryPayu{
+            Street= $"{order.ShipToAddress.Street}",
+            PostalCode=order.ShipToAddress.PostCode,
+            City=order.ShipToAddress.City
+        };
 
         BuyerPayu buyer = new BuyerPayu{
             Email=order.BuyerEmail,
-            Phone="795317224",
+            Phone=order.ShipToAddress.PhoneNumber,
             FirstName=order.ShipToAddress.FirstName,
-            LastName=order.ShipToAddress.LastName,
-            Language="pl"
+            LastName=order.ShipToAddress.Surname,
+            Language="pl",
+            BuyerDelivery=buyerDeliveryPayu
         };
+
+
+       
            
          int total =(int)(basket.Items.Sum(p => (p.Price *100)*p.Quantity)+shippingPrice*100);
            return new OrderPayu {
-               NotifyUrl= "https://your.eshop.com/notify",
+            NotifyUrl= "https://your.eshop.com/payment/notify",
             CustomerIp= "127.0.0.1",
             MerchantPosId= _config["PayuSettings:pos_id"],
-            Description= "Zamówienie numer 1",
+            Description= $"Zamówienie numer {order.Id}",
             CurrencyCode= "PLN",
+            ExtOrderId=order.Id.ToString(),
             TotalAmount=total.ToString(),
             Buyer=buyer,
             Products=productPayuItems

@@ -36,7 +36,7 @@ namespace API.Controllers
         }
 
 
-        [HttpPost]
+        [HttpPost("createOrder")]
         public async Task<IActionResult> CreateOrder(OrderDto dto)
         {
             var order = new Order();
@@ -62,7 +62,7 @@ namespace API.Controllers
             }
         }
 
-        [HttpPost]
+        [HttpPost("notify")]
         [Authorize]
         public async Task<IActionResult> PayuCallback(PayuCallback orderPayu)
         {

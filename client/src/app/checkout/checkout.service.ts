@@ -18,7 +18,7 @@ export class CheckoutService {
     return this.http.post(this.baseUrl + 'order', order);
   }
   createPayment(order: IOdrderToCreate){
-    return this.http.post(this.baseUrl+'payment',order);
+    return this.http.post(this.baseUrl+'payment/createOrder',order);
   }
 
   getDeliveryMethods(){

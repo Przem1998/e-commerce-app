@@ -176,13 +176,16 @@ namespace Infrastructure.Data.Migrations
                             b1.Property<string>("FirstName")
                                 .HasColumnType("TEXT");
 
-                            b1.Property<string>("LastName")
+                            b1.Property<string>("PhoneNumber")
                                 .HasColumnType("TEXT");
 
                             b1.Property<string>("PostCode")
                                 .HasColumnType("TEXT");
 
                             b1.Property<string>("Street")
+                                .HasColumnType("TEXT");
+
+                            b1.Property<string>("Surname")
                                 .HasColumnType("TEXT");
 
                             b1.HasKey("OrderId");

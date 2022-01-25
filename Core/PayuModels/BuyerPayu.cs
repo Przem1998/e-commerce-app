@@ -14,6 +14,8 @@ namespace Core.PayuModels
         public string LastName { get; set; }
         [JsonProperty(PropertyName = "language")]
         public string Language { get; set; }
+        [JsonProperty(PropertyName = "buyerDelivery")]
+        public BuyerDeliveryPayu BuyerDelivery { get; set; }
 
     }
 }

@@ -2783,11 +2783,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\plumber\\Infrastructure\\Infrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Desktop\\plumber_kopia2\\Infrastructure\\Infrastructure.csproj",
       "projectName": "Infrastructure",
-      "projectPath": "C:\\Users\\User\\Desktop\\plumber\\Infrastructure\\Infrastructure.csproj",
+      "projectPath": "C:\\Users\\User\\Desktop\\plumber_kopia2\\Infrastructure\\Infrastructure.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\plumber\\Infrastructure\\obj\\",
+      "outputPath": "C:\\Users\\User\\Desktop\\plumber_kopia2\\Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -2808,8 +2808,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\User\\Desktop\\plumber\\Core\\Core.csproj": {
-              "projectPath": "C:\\Users\\User\\Desktop\\plumber\\Core\\Core.csproj"
+            "C:\\Users\\User\\Desktop\\plumber_kopia2\\Core\\Core.csproj": {
+              "projectPath": "C:\\Users\\User\\Desktop\\plumber_kopia2\\Core\\Core.csproj"
             }
           }
         }
