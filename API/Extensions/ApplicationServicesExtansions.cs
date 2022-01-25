@@ -1,10 +1,13 @@
 using System.Linq;
 using API.Errors;
+using Core.Entities.Identity;
 using Core.Interfaces;
 using Infrastructure.Data;
 using Infrastructure.Services;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 
 namespace API.Extansions
 {
@@ -18,6 +21,7 @@ namespace API.Extansions
            services.AddScoped<IUnitOfWork, UnitOfWork>();
            services.AddScoped<IProductRepository, ProductRepository>();
            services.AddScoped<IBasketRepository,BasketRepository>();
+            services.TryAddScoped<SignInManager<AppUser>>();
            services.AddScoped(typeof(IGenericRepository<>), (typeof(GenericRepository<>)));
           
             services.Configure<ApiBehaviorOptions>(options=>

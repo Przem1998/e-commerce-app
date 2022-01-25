@@ -1,5 +1,6 @@
 using System.Linq;
 using System.Security.Claims;
+using System.Threading;
 using System.Threading.Tasks;
 using API.Dtos;
 using API.Errors;
@@ -35,7 +36,6 @@ namespace API.Controllers
            // var email = User.FindFirstValue(ClaimTypes.Email);
 
             var user = await _userManager.FindByEmailFromClaimsPrinciple(HttpContext.User);
-
              return new UserDto
             {
                 Email = user.Email,
@@ -114,12 +114,22 @@ namespace API.Controllers
 
             if(!result.Succeeded) return BadRequest(new ApiResponse(400));
 
+            
+
+
             return new UserDto
             {
                 DisplayName = user.DisplayName,
                 Token = _tokenService.CreateToken(user),
                 Email = user.Email
             };
+        }
+    }
+
+    internal class IdentityUserRole
+    {
+        public IdentityUserRole()
+        {
         }
     }
 }

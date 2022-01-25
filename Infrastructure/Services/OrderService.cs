@@ -65,6 +65,11 @@ namespace Infrastructure.Services
             var spec = new OrdersWithItemsAndOrderingSpecification(buyerEmail);
             return await _unitOfWork.Repository<Order>().ListAsync(spec);
         }
+        public async Task<IReadOnlyList<Order>> GetAllOrders()
+        {
+            var spec = new OrdersWithItemsAndOrderingSpecification();
+            return await _unitOfWork.Repository<Order>().ListAsync(spec);
+        }
         public async Task<bool> IsOrderComplitedOrCanceled(int orderId)
         {
             Order order = await _unitOfWork.Repository<Order>().GetByIdAsync(orderId);
@@ -80,5 +85,7 @@ namespace Infrastructure.Services
 
             _unitOfWork.Repository<Order>().Update(order);
         }
+
+       
     }
 }

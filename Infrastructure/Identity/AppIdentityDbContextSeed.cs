@@ -7,8 +7,22 @@ namespace Infrastructure.Identity
 {
     public class AppIdentityDbContextSeed
     {
-        public static async Task SeedUsersAsync(UserManager<AppUser> userMenager)
+        public static async Task SeedUsersAsync(UserManager<AppUser> userMenager, AppIdentityDbContext context)
         {
+           
+            if(!context.Roles.Any())
+            {
+                context.Roles.Add(new IdentityRole(){
+                Name="ADMIN" 
+                });
+                    context.Roles.Add(new IdentityRole(){
+                Name="MENAGER" 
+                });
+                context.Roles.Add(new IdentityRole(){
+                Name="MEMBER" 
+                });
+                context.SaveChanges();
+            }
            if(!userMenager.Users.Any())
            {
                var user = new AppUser

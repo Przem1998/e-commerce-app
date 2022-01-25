@@ -11,7 +11,7 @@ namespace Core.Interfaces
         Task<Order> GetOrderByIdAsync(int id, string buyerEmail);
         Task<IReadOnlyList<DeliveryMethod>> GetDeliveryMethodsAsync();
         Task<bool> IsOrderComplitedOrCanceled(int orderId);
-         Task ChangeOrderStatus(int orderId, string status);
-        
+        Task ChangeOrderStatus(int orderId, string status);
+        Task<IReadOnlyList<Order>> GetAllOrders();
     }
 }
