@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { stringify } from 'querystring';
 import { Observable } from 'rxjs';
 import { AccountService } from 'src/app/account/account.service';
 import { BasketService } from 'src/app/basket/basket.service';
@@ -19,12 +20,20 @@ export class NavBarComponent implements OnInit {
 
   ngOnInit(): void {
     this.basket$ = this.basketService.basket$;
+
     this.currentUser$ = this.accountService.currentUser$;
+    
     this.breadcrumb$= this.bcService.breadcrumbs$;
+  }
+  getCurrentUserEmail(){
+    this.currentUser$.subscribe(res=>{
+      if(res.email !=null) console.log(res.email);
+    })
   }
 
   logout(){
     this.accountService.logout();
+    
   }
 
 }

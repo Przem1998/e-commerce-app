@@ -12,7 +12,7 @@ namespace API.Dtos
         ErrorMessage = "Password must have 1 uppercase, 1 lowercase, 1 number and 1 non alphanumeric and 8 beetween 16 characters")]
         public string Password { get; set; }
         [Required]
-        public string Name { get; set; }
+        public string FirstName { get; set; }
         [Required]
         public string Surname { get; set; }
         public string Street { get; set; }

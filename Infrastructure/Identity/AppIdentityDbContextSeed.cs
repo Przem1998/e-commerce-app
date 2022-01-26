@@ -7,22 +7,9 @@ namespace Infrastructure.Identity
 {
     public class AppIdentityDbContextSeed
     {
-        public static async Task SeedUsersAsync(UserManager<AppUser> userMenager, AppIdentityDbContext context)
+        public static async Task SeedUsersAsync(UserManager<AppUser> userMenager)
         {
            
-            if(!context.Roles.Any())
-            {
-                context.Roles.Add(new IdentityRole(){
-                Name="ADMIN" 
-                });
-                    context.Roles.Add(new IdentityRole(){
-                Name="MENAGER" 
-                });
-                context.Roles.Add(new IdentityRole(){
-                Name="MEMBER" 
-                });
-                context.SaveChanges();
-            }
            if(!userMenager.Users.Any())
            {
                var user = new AppUser
@@ -30,6 +17,7 @@ namespace Infrastructure.Identity
                    DisplayName = "Jan",
                    Email = "jan_kowalski@gmail.com",
                    UserName = "jan_kowalski",
+                   Role="ADMIN",
                    Address = new Address
                    {
                        FirstName = "Jan",

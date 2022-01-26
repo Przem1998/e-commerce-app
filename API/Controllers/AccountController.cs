@@ -8,6 +8,7 @@ using API.Extansions;
 using AutoMapper;
 using Core.Entities.Identity;
 using Core.Interfaces;
+using Infrastructure.Identity;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -24,6 +25,7 @@ namespace API.Controllers
         public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager,
                                 ITokenService tokenService, IMapper mapper)
         {
+     
             this._userManager = userManager;
             this._signInManager = signInManager;
             this._tokenService = tokenService;
@@ -33,13 +35,13 @@ namespace API.Controllers
         [HttpGet]
         public async Task<ActionResult<UserDto>> GetCurrentUser()
         {
-           // var email = User.FindFirstValue(ClaimTypes.Email);
+            // var email = User.FindFirstValue(ClaimTypes.Email);
 
             var user = await _userManager.FindByEmailFromClaimsPrinciple(HttpContext.User);
-             return new UserDto
+            return new UserDto
             {
                 Email = user.Email,
-                 Token =  _tokenService.CreateToken(user),
+                Token = _tokenService.CreateToken(user),
                 DisplayName = user.DisplayName
             };
         }
@@ -55,7 +57,7 @@ namespace API.Controllers
         public async Task<ActionResult<AddressDto>> GetUserAddressAsync()
         {
             var user = await _userManager.FindByUserByClaimsPrincipleWithAddressAsync(HttpContext.User);
-            
+
             return _mapper.Map<Address, AddressDto>(user.Address);
         }
         [Authorize]
@@ -63,11 +65,11 @@ namespace API.Controllers
         public async Task<ActionResult<AddressDto>> UpdateUserAddresss(AddressDto address)
         {
             var user = await _userManager.FindByUserByClaimsPrincipleWithAddressAsync(HttpContext.User);
-            
+
             user.Address = _mapper.Map<AddressDto, Address>(address);
             var result = await _userManager.UpdateAsync(user);
 
-            if(result.Succeeded) return Ok(_mapper.Map<Address, AddressDto>(user.Address));
+            if (result.Succeeded) return Ok(_mapper.Map<Address, AddressDto>(user.Address));
             return BadRequest("Problem updating the user");
         }
 
@@ -75,15 +77,15 @@ namespace API.Controllers
         public async Task<ActionResult<UserDto>> Login(LoginDto loginDto)
         {
             var user = await _userManager.FindByEmailAsync(loginDto.Email);
-            if(user == null) return Unauthorized(new ApiResponse(401));
+            if (user == null) return Unauthorized(new ApiResponse(401));
 
             var result = await _signInManager.CheckPasswordSignInAsync(user, loginDto.Password, false);
-            if(!result.Succeeded) return Unauthorized(new ApiResponse(401));
+            if (!result.Succeeded) return Unauthorized(new ApiResponse(401));
 
             return new UserDto
             {
                 Email = user.Email,
-                Token =  _tokenService.CreateToken(user),
+                Token = _tokenService.CreateToken(user),
                 DisplayName = user.DisplayName
             };
         }
@@ -91,29 +93,32 @@ namespace API.Controllers
         [HttpPost("register")]
         public async Task<ActionResult<UserDto>> Register(RegisterDto registerDto)
         {
-            if(CheckEmailExistsAsync(registerDto.Email).Result.Value)
+            if (CheckEmailExistsAsync(registerDto.Email).Result.Value)
             {
-                return new BadRequestObjectResult(new APIValidationErrorResponse{Errors = new [] {"Email address is in use"}});
+                return new BadRequestObjectResult(new APIValidationErrorResponse { Errors = new[] { "Email address is in use" } });
             }
-            var address = new Address{
-                    Street=registerDto.Street,
-                    HouseNumber=registerDto.HouseNumber,
-                    ApartmentNumber=registerDto.ApartmentNumber,
-                    City=registerDto.City,
-                    PhoneNumber=registerDto.PhoneNumber,
-                    PostCode=registerDto.PostCode,
-                };
+            var address = new Address
+            {
+                FirstName = registerDto.FirstName,
+                Surname = registerDto.Surname,
+                Street = registerDto.Street,
+                HouseNumber = registerDto.HouseNumber,
+                ApartmentNumber = registerDto.ApartmentNumber,
+                City = registerDto.City,
+                PhoneNumber = registerDto.PhoneNumber,
+                PostCode = registerDto.PostCode,
+            };
             var user = new AppUser
             {
-                DisplayName = registerDto.Name,
+                DisplayName = registerDto.FirstName,
                 Email = registerDto.Email,
-                Address= address,
-                UserName = registerDto.Email
+                Address = address,
+                UserName = registerDto.Email,
+                Role="MEMBER"
             };
             var result = await _userManager.CreateAsync(user, registerDto.Password);
 
-            if(!result.Succeeded) return BadRequest(new ApiResponse(400));
-
+            if (!result.Succeeded) return BadRequest(new ApiResponse(400));
             
 
 

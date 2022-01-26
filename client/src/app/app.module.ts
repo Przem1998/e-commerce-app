@@ -19,12 +19,12 @@ import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
     CoreModule,
     HomeModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    AppRoutingModule,
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass:ErrorInterceptor, multi:true},
