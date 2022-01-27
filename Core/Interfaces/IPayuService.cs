@@ -12,7 +12,9 @@ namespace Core.Interfaces
         Task<OrderPayu> CreateOrder(Order order, string basketId);
         string GetOrderUrlPayu();
         string GetSignature(string input, string algorithm);
-
+        Task<Order> UpdateOrderPaymentSucceeded(string paymentIntentId);
+        Task<Order> UpdateOrderPaymentFailed(string paymentIntentId);
+        
      
 
     }

@@ -1,6 +1,8 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
@@ -63,32 +65,38 @@ namespace API.Controllers
         }
 
         [HttpPost("notify")]
-        [Authorize]
+        // [Authorize]
         public async Task<IActionResult> PayuCallback(PayuCallback orderPayu)
         {
             //Validate signature
-            var input = new StreamReader(Request.Scheme).ReadToEnd();
-            var openPayuHeader = Request.Headers["OpenPayu-Signature"];
-            var openPayuHeaderParts = openPayuHeader.ToArray();
-            //Isolate signature
-            var signature = openPayuHeaderParts.Where(s=> s.StartsWith("signature=")).Single().Substring(10);
-            //get cipher method
-            var hashAlgorithm = openPayuHeader.Where(s=> s.StartsWith("algorithm=")).Single().Substring(10);
-    
-            string concatenatedContent= input+ _config["PayuSettings:SecondKeyMD5"];
-            string expectedSignature = _paymentService.GetSignature(concatenatedContent,hashAlgorithm);
-            if(expectedSignature!=signature) 
-                return BadRequest(new ApiResponse(500));
+            // var input = new StreamReader(Request.Scheme).ReadToEnd();
             
+            // //Isolate signature
+           
+       
+            var json = await new StreamReader(HttpContext.Request.Body).ReadToEndAsync();
+               var openPayuHeader = Request.Headers["OpenPayu-Signature"];
+            var openPayuHeaderParts = openPayuHeader.ToArray();
+             // var signature = openPayuHeaderParts.Where(s=> s.StartsWith("signature=")).Single().Substring(10);
+            // //get cipher method
+            // var hashAlgorithm = openPayuHeader.Where(s=> s.StartsWith("algorithm=")).Single().Substring(10);
+    
+            // string concatenatedContent= input+ _config["PayuSettings:SecondKeyMD5"];
+            // string expectedSignature = _paymentService.GetSignature(concatenatedContent,hashAlgorithm);
+            // if(expectedSignature!=signature) 
+            //     return BadRequest(new ApiResponse(500));
+            
+         
             //identify order
-            int orderId = int.Parse(orderPayu.Order.ExtOrderId);
+            int orderId = int.Parse(orderPayu.Order.ExtOrderId.Substring(10));
             
             if( await _orderService.IsOrderComplitedOrCanceled(orderId))
                 return Ok(new ApiResponse(200));
             
-            await _orderService.ChangeOrderStatus(orderId,orderPayu.Order.Status);
             
-            return Ok("Wywołano callback payu "+JsonConvert.SerializeObject(orderPayu));
+
+            return Ok( _mapper.Map<OrderToReturnDto>(await _orderService.ChangeOrderStatus(orderId,orderPayu.Order.Status)));
+  
         }
 
     }

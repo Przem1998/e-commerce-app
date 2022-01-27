@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using Core.Entities;
 using Core.Entities.OrderAggregate;
@@ -78,12 +79,24 @@ namespace Infrastructure.Services
 
             return false;
         }
-        public async Task ChangeOrderStatus(int orderId, string status)
+        public async Task<Order> ChangeOrderStatus(int orderId, string status)
         {
             Order order = await _unitOfWork.Repository<Order>().GetByIdAsync(orderId);
             if(status== "COMPLETED")   order.Status=OrderStatus.Completed;
+            else if(status =="CANCELED") order.Status=OrderStatus.Canceled;
 
             _unitOfWork.Repository<Order>().Update(order);
+          var result = await _unitOfWork.Complete();
+
+            if(result <= 0) return null;
+
+            return order;
+
+        }
+        public async Task<int> GetOrderId()
+        {
+           var result = await _unitOfWork.Repository<Order>().ListAllAsync();
+           return result.Count;
         }
 
        

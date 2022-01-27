@@ -49,7 +49,7 @@ export class CheckoutPaymentComponent implements OnInit {
   // }
   goToPayu(){
     this.checkoutService.createPayment(this.getOrderToCreate(this.basketService.getCurrentBasketValue())).subscribe((response: any) =>{
-
+      console.log(response);
       window.open(response,"_blank");
 
     }, error =>{

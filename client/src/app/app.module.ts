@@ -12,6 +12,7 @@ import { ErrorInterceptor } from './core/interceptors/error.interceptor';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { LoadingInterceptor } from './core/interceptors/loading.interceptors';
 import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
+import { DashboardModule } from './dashboard/dashboard.module';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
     CoreModule,
     HomeModule,
     NgxSpinnerModule,
+    DashboardModule,
     AppRoutingModule,
   ],
   providers: [

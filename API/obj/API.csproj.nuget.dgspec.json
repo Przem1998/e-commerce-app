@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Desktop\\plumber_kopia2\\api\\API.csproj": {}
+    "C:\\Users\\User\\Desktop\\e-commerce-app-develop\\api\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Desktop\\plumber_kopia2\\api\\API.csproj": {
+    "C:\\Users\\User\\Desktop\\e-commerce-app-develop\\api\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\plumber_kopia2\\api\\API.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\e-commerce-app-develop\\api\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\User\\Desktop\\plumber_kopia2\\api\\API.csproj",
+        "projectPath": "C:\\Users\\User\\Desktop\\e-commerce-app-develop\\api\\API.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\plumber_kopia2\\api\\obj\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\e-commerce-app-develop\\api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -32,8 +32,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\User\\Desktop\\plumber_kopia2\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\User\\Desktop\\plumber_kopia2\\Infrastructure\\Infrastructure.csproj"
+              "C:\\Users\\User\\Desktop\\e-commerce-app-develop\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\User\\Desktop\\e-commerce-app-develop\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }
@@ -103,14 +103,14 @@
         }
       }
     },
-    "C:\\Users\\User\\Desktop\\plumber_kopia2\\Core\\Core.csproj": {
+    "C:\\Users\\User\\Desktop\\e-commerce-app-develop\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\plumber_kopia2\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\e-commerce-app-develop\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\User\\Desktop\\plumber_kopia2\\Core\\Core.csproj",
+        "projectPath": "C:\\Users\\User\\Desktop\\e-commerce-app-develop\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\plumber_kopia2\\Core\\obj\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\e-commerce-app-develop\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -171,14 +171,14 @@
         }
       }
     },
-    "C:\\Users\\User\\Desktop\\plumber_kopia2\\Infrastructure\\Infrastructure.csproj": {
+    "C:\\Users\\User\\Desktop\\e-commerce-app-develop\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\plumber_kopia2\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\e-commerce-app-develop\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "C:\\Users\\User\\Desktop\\plumber_kopia2\\Infrastructure\\Infrastructure.csproj",
+        "projectPath": "C:\\Users\\User\\Desktop\\e-commerce-app-develop\\Infrastructure\\Infrastructure.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\plumber_kopia2\\Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\e-commerce-app-develop\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -199,8 +199,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\User\\Desktop\\plumber_kopia2\\Core\\Core.csproj": {
-                "projectPath": "C:\\Users\\User\\Desktop\\plumber_kopia2\\Core\\Core.csproj"
+              "C:\\Users\\User\\Desktop\\e-commerce-app-develop\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\User\\Desktop\\e-commerce-app-develop\\Core\\Core.csproj"
               }
             }
           }

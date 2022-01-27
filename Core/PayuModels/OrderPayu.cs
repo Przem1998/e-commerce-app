@@ -7,6 +7,8 @@ namespace Core.PayuModels
     {
         [JsonProperty(PropertyName = "notifyUrl")]
         public string NotifyUrl { get; set; }
+        [JsonProperty(PropertyName = "continueUrl")]
+        public string ContinueUrl { get; set; }
         [JsonProperty(PropertyName = "customerIp")]
         public string CustomerIp { get; set; }
         [JsonProperty(PropertyName = "merchantPosId")]

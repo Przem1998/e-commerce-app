@@ -56,7 +56,7 @@ namespace API.Controllers
         {
             return Ok(await _orderService.GetDeliveryMethodsAsync());
         }
-          [HttpGet("allOrders")]
+        [HttpGet("allOrders")]
         public async Task<ActionResult<IReadOnlyList<OrderDto>>> GetAllOrders()
         {
             var orders = await _orderService.GetAllOrders();
