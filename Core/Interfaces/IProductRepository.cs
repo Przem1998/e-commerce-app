@@ -9,10 +9,11 @@ namespace Core.Interfaces
         Task<Product> GetProductByIdAsync(int id);
         Task<IReadOnlyList<Product>> GetAllProductsAsync();
         
-        Task<IReadOnlyList<ProductSize>> GetAllProductSizesAsync();
+        Task<IReadOnlyList<SystemType>> GetAllSystemTypesAsync();
 
         Task<IReadOnlyList<ProductType>> GetAllProductTypesAsync();
         Task<Product> AddProduct(Product product);
+        Task<bool> DeleteProduct(int id);
 
     }
 }

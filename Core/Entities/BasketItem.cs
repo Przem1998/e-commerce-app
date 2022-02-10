@@ -8,6 +8,6 @@ namespace Core.Entities
         public int Quantity {get; set;}
         public string PictureUrl { get; set; }
         public string ProductType { get; set; }
-        public string ProductSize { get; set; }
+        public string SystemType { get; set; }
     }
 }

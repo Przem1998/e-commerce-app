@@ -15,9 +15,9 @@ namespace Infrastructure.Data
             _context = context;
         }
 
-        public async Task<IReadOnlyList<ProductSize>> GetAllProductSizesAsync()
+        public async Task<IReadOnlyList<SystemType>> GetAllSystemTypesAsync()
         {
-           return await _context.ProductSizes.ToListAsync();
+           return await _context.SystemTypes.ToListAsync();
         }
 
         public async Task<IReadOnlyList<Product>> GetAllProductsAsync()
@@ -25,7 +25,7 @@ namespace Infrastructure.Data
          //   var products = _context.Products.OrderBy
 
             return  await _context.Products
-                        .Include(p=>p.ProductSize)
+                        .Include(p=>p.SystemType)
                         .Include(p=>p.ProductType)
                         .ToListAsync();
         }
@@ -40,7 +40,7 @@ namespace Infrastructure.Data
             
         
             return await _context.Products
-                        .Include(p=>p.ProductSize)
+                        .Include(p=>p.SystemType)
                         .Include(p=>p.ProductType)
                         .FirstOrDefaultAsync(p=>p.Id==id);
         }
@@ -48,6 +48,11 @@ namespace Infrastructure.Data
         public Task<Product> AddProduct(Product product)
         {
             
+            throw new System.NotImplementedException();
+        }
+
+        public Task<bool> DeleteProduct(int id)
+        {
             throw new System.NotImplementedException();
         }
     }

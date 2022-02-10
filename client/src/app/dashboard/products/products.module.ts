@@ -1,19 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { AddProductComponent } from './add-product/add-product.component';
+import { ProductsRoutingModule } from './products-routing.module';
 import { ProductsComponent } from './products.component';
-import { PaginationComponent } from 'ngx-bootstrap/pagination';
+import { AddProductComponent } from './add-product/add-product.component';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
-    AddProductComponent,
     ProductsComponent,
-    PaginationComponent
+    AddProductComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ProductsRoutingModule,
+    ReactiveFormsModule,
+    SharedModule
   ]
 })
 export class ProductsModule { }

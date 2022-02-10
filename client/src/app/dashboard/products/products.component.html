@@ -1,5 +1,5 @@
 <div class="container mt-5">
-    <button routerLink="Dodaj"  routerLinkActive="active">
+    <button routerLink="admin/products/add"  routerLinkActive="active">
 Dodaj
     </button>
     <div class="row"> 
@@ -24,7 +24,7 @@ Dodaj
                                 <div class="text-uppercase">Kategoria</div>
                             </th>
                             <th class="border-0 bg-light">
-                                <div class="text-uppercase">Ilość</div>
+                                <div class="text-uppercase">Usuń</div>
                             </th>
                         </tr>
                     </thead>
@@ -35,6 +35,7 @@ Dodaj
                             <td class="align-middle">{{item.name}}</td>
                             <td class="align-middle">{{item.price}}zł</td>  
                             <td class="align-middle">{{item.productType}}</td>
+                            <td class="align-middle"><button type="button">Usuń</button></td>
                             <td></td>
                         </tr>
                     </tbody>

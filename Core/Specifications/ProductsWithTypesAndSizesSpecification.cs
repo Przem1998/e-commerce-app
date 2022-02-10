@@ -9,7 +9,7 @@ namespace Core.Specifications
         public ProductsWithTypesAndSizesSpecification()
         {
           AddInclude(x=> x.ProductType);
-          AddInclude(x=> x.ProductSize);
+          AddInclude(x=> x.SystemType);
         }
       
         // add criteria for Brand and Type
@@ -17,12 +17,12 @@ namespace Core.Specifications
         public ProductsWithTypesAndSizesSpecification(ProductSpecParams productParams) : 
         base (x=>(
                   (string.IsNullOrEmpty(productParams.Search) || x.Name.ToLower().Contains(productParams.Search))&&
-                  (!productParams.SizeId.HasValue || x.ProductSizeId==productParams.SizeId)&&
+                  (!productParams.SystemId.HasValue || x.SystemTypeId==productParams.SystemId)&&
                   (!productParams.TypeId.HasValue || x.ProductTypeId==productParams.TypeId))
                 )
       {
           AddInclude(x=> x.ProductType);
-          AddInclude(x=> x.ProductSize);
+          AddInclude(x=> x.SystemType);
           AddOrderBy(x=> x.Name);
           ApplyPaging(productParams.PageSize*(productParams.PageIndex-1) ,productParams.PageSize);
 
@@ -43,7 +43,7 @@ namespace Core.Specifications
         public ProductsWithTypesAndSizesSpecification(int id) : base(x=>x.Id==id)
         {
           AddInclude(x=> x.ProductType);
-          AddInclude(x=> x.ProductSize);
+          AddInclude(x=> x.SystemType);
         }
     }
 }

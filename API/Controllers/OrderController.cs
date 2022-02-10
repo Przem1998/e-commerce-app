@@ -9,6 +9,7 @@ using AutoMapper;
 using Core.Entities.OrderAggregate;
 using Core.Interfaces;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
@@ -62,5 +63,6 @@ namespace API.Controllers
             var orders = await _orderService.GetAllOrders();
             return Ok(_mapper.Map<IReadOnlyList<OrderToReturnDto>>(orders));
         }
+
     }
 }

@@ -14,10 +14,10 @@ const routes: Routes = [
   {path: 'not-found', component:NotFoundComponent, data:{breadcrumb: 'Not found'}},
   {path: 'shop', loadChildren: () => import('./shop/shop.module').then(mod => mod.ShopModule), data:{breadcrumb: 'Sklep'}},
   {path: 'basket', loadChildren: () => import('./basket/basket.module').then(mod => mod.BasketModule), data:{breadcrumb: 'Koszyk'}},
-  {path: 'checkout', canActivate: [AuthGuard], loadChildren: () => import('./checkout/checkout.module').then(mod => mod.CheckoutModule), data:{breadcrumb: 'Do kasy'}},
+  {path: 'checkout', loadChildren: () => import('./checkout/checkout.module').then(mod => mod.CheckoutModule), canActivate: [AuthGuard],  data:{breadcrumb: 'Do kasy'}},
   {path: 'orders',  loadChildren: () => import('./orders/orders.module').then(mod => mod.OrdersModule), data:{breadcrumb: 'Zamówienia'}},
   {path: 'account', loadChildren: () => import('./account/account.module').then(mod => mod.AccountModule), data:{ breadcrumb: {skip: true}}},
-  {path: 'admin',  loadChildren: () => import('./dashboard/dashboard.module').then(mod => mod.DashboardModule), data:{breadcrumb: 'Panel Administratora'}},
+  {path: 'admin', loadChildren: () => import('./dashboard/dashboard.module').then(mod => mod.DashboardModule), data:{breadcrumb: 'Panel Administratora'}},
   {path: '**', redirectTo: 'not-found', pathMatch: 'full'}
 ]; //navigate beetween pages
 

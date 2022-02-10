@@ -96,7 +96,7 @@ export class BasketService {
       pictureUrl: item.pictureUrl,
       quantity,
       productType: item.productType,
-      productSize: item.productSize
+      systemType: item.systemType
     }
   }
   private calculateTotals(){

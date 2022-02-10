@@ -10,7 +10,7 @@
     >
     <div *ngIf="controlDir && controlDir.control && controlDir.control.status === 'PENDING'" class="fa fa-spinner fa-spin loader"></div>
     <div class="invalid-feedback" *ngIf="(controlDir && controlDir.control && !controlDir.control.valid && controlDir.control.touched)">
-        <span  *ngIf="controlDir.control.errors?.required">{{label}} jest wymagany</span>
+        <span  *ngIf="controlDir.control.errors?.required">Pusta kontrolka {{label}}</span>
         <span *ngIf="controlDir.control.errors?.pattern">Niewłaściwy {{label}}</span>
     </div>
     <div class="invalid-feedback d-block" *ngIf="(controlDir && controlDir.control && !controlDir.control.valid && controlDir.control.touched && controlDir.control.dirty)">

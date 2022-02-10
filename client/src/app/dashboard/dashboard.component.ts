@@ -7,7 +7,7 @@ import { SharedModule } from '../shared/shared.module';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-
+ selectedOptionStatus:string
   constructor() { }
 
   ngOnInit(): void {

@@ -11,7 +11,7 @@ namespace API.Helpers
         public MappingProfiles()
         {
             CreateMap<Product,ProductToReturnDtos>()
-                .ForMember(d=>d.ProductSize,o=>o.MapFrom(s=>s.ProductSize.Size))
+                .ForMember(d=>d.SystemType,o=>o.MapFrom(s=>s.SystemType.Name))
                 .ForMember(d=>d.ProductType,o=>o.MapFrom(s=>s.ProductType.Name))
                 .ForMember(d =>d.PictureUrl,o=>o.MapFrom<ProductURLResolver>());
 

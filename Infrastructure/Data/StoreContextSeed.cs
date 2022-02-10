@@ -14,15 +14,17 @@ namespace Infrastructure.Data
     {
         public static async Task SeedAsync(StoreContext context, ILoggerFactory loggerFactory)
         {
+            
             try
             {
-                if (!context.ProductSizes.Any())
+                if (!context.SystemTypes.Any())
                 {
-                    var brandsData = File.ReadAllText("../Infrastructure/SeedData/sizes.json");
-                    var brands = JsonSerializer.Deserialize<List<ProductSize>>(brandsData);
+                    var brandsData = File.ReadAllText("../Infrastructure/SeedData/systems.json");
+                    var brands = JsonSerializer.Deserialize<List<SystemType>>(brandsData);
                     foreach (var item in brands)
                     {
-                        context.ProductSizes.Add(item);
+                        context.Database.BeginTransaction();
+                        context.SystemTypes.Add(item);
                     }
                     await context.SaveChangesAsync();
                 }
@@ -56,8 +58,16 @@ namespace Infrastructure.Data
                     }
                     await context.SaveChangesAsync();
                 }
-
-
+                if (!context.SystemTypes.Any())
+                {
+                    var logsData = File.ReadAllText("../Infrastructure/SeedData/logs.json");
+                    var logs = JsonSerializer.Deserialize<List<SystemType>>(logsData);
+                    foreach (var log in logs)
+                    {
+                        context.SystemTypes.Add(log);
+                    }
+                    await context.SaveChangesAsync();
+                }
             }
             catch (Exception ex)
             {

@@ -5,6 +5,6 @@ export interface IProduct {
         price: number;
         pictureUrl: string;
         productType: string;
-        productSize: string;
+        systemType: string;
     }
 

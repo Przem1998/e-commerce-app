@@ -8,6 +8,7 @@ import { CheckoutDeliveryComponent } from './checkout-delivery/checkout-delivery
 import { CheckoutReviewComponent } from './checkout-review/checkout-review.component';
 import { CheckoutPaymentComponent } from './checkout-payment/checkout-payment.component';
 import { CheckoutSucceessComponent } from './checkout-succeess/checkout-succeess.component';
+import { FailPayComponent } from './fail-pay/fail-pay.component';
 
 
 
@@ -18,7 +19,8 @@ import { CheckoutSucceessComponent } from './checkout-succeess/checkout-succeess
     CheckoutDeliveryComponent,
     CheckoutReviewComponent,
     CheckoutPaymentComponent,
-    CheckoutSucceessComponent
+    CheckoutSucceessComponent,
+    FailPayComponent
   ],
   imports: [
     CommonModule,

@@ -18,7 +18,6 @@ namespace Infrastructure.Data
         public async Task<bool> DeleteBasketAsync(string basketId)
         {
            return await _database.KeyDeleteAsync(basketId);
-        
         }
 
         public async Task<CustomerBasket> GetBasketAsync(string basketId)

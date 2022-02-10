@@ -82,8 +82,8 @@ namespace Infrastructure.Services
         public async Task<Order> ChangeOrderStatus(int orderId, string status)
         {
             Order order = await _unitOfWork.Repository<Order>().GetByIdAsync(orderId);
-            if(status== "COMPLETED")   order.Status=OrderStatus.Completed;
-            else if(status =="CANCELED") order.Status=OrderStatus.Canceled;
+            if(status== "COMPLETED" || status=="Completed")   order.Status=OrderStatus.Completed;
+            else if(status =="CANCELED" || status=="Canceled") order.Status=OrderStatus.Canceled;
 
             _unitOfWork.Repository<Order>().Update(order);
           var result = await _unitOfWork.Complete();
@@ -93,10 +93,22 @@ namespace Infrastructure.Services
             return order;
 
         }
+
         public async Task<int> GetOrderId()
         {
            var result = await _unitOfWork.Repository<Order>().ListAllAsync();
            return result.Count;
+        }
+        
+        public List<string> GetAllStatus()
+        {
+            return new List<string>
+            {
+                OrderStatus.Completed.ToString(),
+                OrderStatus.Pending.ToString(),
+                OrderStatus.Canceled.ToString()
+            };
+
         }
 
        

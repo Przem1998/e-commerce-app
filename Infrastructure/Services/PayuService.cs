@@ -10,6 +10,7 @@ using Core.Entities;
 using Core.Entities.OrderAggregate;
 using Core.Interfaces;
 using Core.PayuModels;
+using Infrastructure.Data;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 namespace Infrastructure.Services
@@ -20,8 +21,10 @@ namespace Infrastructure.Services
         private readonly IUnitOfWork _unitOfWork;
         private readonly IConfiguration _config;
         private readonly IOrderService _orderService;
-        public PayuService(IBasketRepository basketRepository, IUnitOfWork unitOfWork, IConfiguration config, IOrderService orderService)
+        private readonly StoreContext _context;
+        public PayuService(IBasketRepository basketRepository, IUnitOfWork unitOfWork, IConfiguration config, IOrderService orderService, StoreContext context)
         {
+            _context = context;
             _orderService = orderService;
             _config = config;
             _unitOfWork = unitOfWork;
@@ -32,7 +35,7 @@ namespace Infrastructure.Services
         {
             var basket = await _basketRepository.GetBasketAsync(basketId);
             var shippingPrice = 0m;
-            order.Id= await _orderService.GetOrderId();
+            order.Id = await _orderService.GetOrderId();
             if (basket.DeliveryMethodId.HasValue)
             {
                 var deliveryMethod = await _unitOfWork.Repository<DeliveryMethod>()
@@ -56,10 +59,11 @@ namespace Infrastructure.Services
                 };
                 productPayuItems.Add(productPayu);
             }
-            BuyerDeliveryPayu buyerDeliveryPayu = new BuyerDeliveryPayu{
-                Street= $"{order.ShipToAddress.Street}",
-                PostalCode=order.ShipToAddress.PostCode,
-                City=order.ShipToAddress.City
+            BuyerDeliveryPayu buyerDeliveryPayu = new BuyerDeliveryPayu
+            {
+                Street = $"{order.ShipToAddress.Street}",
+                PostalCode = order.ShipToAddress.PostCode,
+                City = order.ShipToAddress.City
             };
 
             BuyerPayu buyer = new BuyerPayu
@@ -69,23 +73,19 @@ namespace Infrastructure.Services
                 FirstName = order.ShipToAddress.FirstName,
                 LastName = order.ShipToAddress.Surname,
                 Language = "pl"
-               // BuyerDelivery=buyerDeliveryPayu
-            
+                // BuyerDelivery=buyerDeliveryPayu
+
             };
-
-
-
-
             int total = (int)(basket.Items.Sum(p => (p.Price * 100) * p.Quantity) + shippingPrice * 100);
             return new OrderPayu
             {
                 NotifyUrl = "https://localhost:5001/payment/notify",
-                ContinueUrl="https://localhost:4200/continue",
+                ContinueUrl = "https://localhost:4200/checkout/result/",
                 CustomerIp = "127.0.0.1",
                 MerchantPosId = _config["PayuSettings:pos_id"],
                 Description = $"Zamówienie numer {order.Id}",
                 CurrencyCode = "PLN",
-                ExtOrderId = $"PayuOrder_{order.Id}",
+                //ExtOrderId = $"PayuOrder_{order.Id}",
                 TotalAmount = total.ToString(),
                 Buyer = buyer,
                 Products = productPayuItems
@@ -133,6 +133,17 @@ namespace Infrastructure.Services
         public Task<Order> UpdateOrderPaymentFailed(string paymentIntentId)
         {
             throw new NotImplementedException();
+        }
+        public void AddToRaport(string raport)
+        {
+            var log = new Logs
+            {
+                Type = "Info",
+                Details = raport
+            };
+
+           _context.Add(log);
+
         }
     }
 }

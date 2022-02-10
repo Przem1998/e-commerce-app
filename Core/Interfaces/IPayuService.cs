@@ -14,7 +14,7 @@ namespace Core.Interfaces
         string GetSignature(string input, string algorithm);
         Task<Order> UpdateOrderPaymentSucceeded(string paymentIntentId);
         Task<Order> UpdateOrderPaymentFailed(string paymentIntentId);
-        
+        void AddToRaport(string raport);
      
 
     }

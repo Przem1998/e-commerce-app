@@ -27,7 +27,7 @@ export class RegisterComponent implements OnInit {
              [this.validateEmailNotTaken()]
             ],
       password: [null, [Validators.required, Validators.pattern("(?=^.{8,16}$)(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&amp;*()_+}{&quot;:;'?/&gt;.&lt;,])(?!.*\\s).*$")]],
-      name:[null, Validators.required],
+      firstName:[null, Validators.required],
       surname:[null, Validators.required],
       street:[null, Validators.required],
       houseNumber:[null, Validators.required],
@@ -40,7 +40,7 @@ export class RegisterComponent implements OnInit {
   onSubmit(){
     this.accountService.register(this.registerForm.value).subscribe( response =>{
       this.router.navigateByUrl('/shop');
-      this.toastr.success('Order created successfully');
+      this.toastr.success('Rejestracja dokonana pomyślnie');
     }, error => {
       console.log(error);
       this.errors= error.errors;

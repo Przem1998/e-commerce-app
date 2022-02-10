@@ -1,16 +1,20 @@
-<div class="float-none d-flex justify-content-between flex-column flex-lg-row mb-5">
+<div class="float-none d-flex justify-content-between mt-2">
     <button class="btn btn-outline-primary" cdkStepperPrevious>
         <i class="fa fa-angle-left"></i> Wróć do płatności
     </button>
   
 
-       <button class="payuButton" (click)="goToPayu()">
-           <img src="/assets/images/PAYU_LOGO_LIME.png" width="150px" alt="payu">
+       <button class="payuButton" class="btn btn-outline-primary d-flex align-items-center" type="button" (click)="goToPayu()">
+        <div class="submitButton ">
+            Zamawiam i płacę z
+        </div>   
+        <img src="/assets/images/PAYU_LOGO_LIME.png" width="100px" alt="payu">
+   
         </button> 
    
     <button class="btn btn-outline-primary" (click)="submitOrder()">
         <div class="submitButton">
-            Złóż zamówienie i dokonaj płatności za pomocą PayU
+            Złóż zamówienie za pobraniem (+5zł)
         </div>
         <i class="fa fa-angle-right"></i> 
     </button>

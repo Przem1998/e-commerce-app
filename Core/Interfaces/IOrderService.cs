@@ -13,6 +13,7 @@ namespace Core.Interfaces
         Task<bool> IsOrderComplitedOrCanceled(int orderId);
         Task<Order> ChangeOrderStatus(int orderId, string status);
         Task<IReadOnlyList<Order>> GetAllOrders();
+        List<string> GetAllStatus();
         Task<int> GetOrderId();
     }
 }

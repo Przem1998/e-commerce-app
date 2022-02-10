@@ -19,7 +19,7 @@ namespace API.Dtos
         public string PictureUrl { get; set; }
         [Required]
         public string ProductType { get; set; }
-        [Required]
-       public string ProductSize { get; set; }
+       // [Required]
+       public string SystemType { get; set; }
     }
 }

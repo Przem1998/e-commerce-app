@@ -1,9 +1,9 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { ISize } from '../shared/models/size';
 import { IProduct } from '../shared/models/product';
 import { IType } from '../shared/models/productType';
 import { ShopParams } from '../shared/models/shopParams';
 import { ShopService } from './shop.service';
+import { ISystemType } from '../shared/models/systemType';
 
 @Component({
   selector: 'app-shop',
@@ -14,21 +14,21 @@ export class ShopComponent implements OnInit {
   @ViewChild("search", {static: false}) searchTerm: ElementRef;
 
   products: IProduct[];
-  sizes: ISize[];
+  systems: ISystemType[];
   types: IType[];
   shopParams= new ShopParams();
   totalCount:number;
   sortOptions =[
-    {name: 'Alphabetical', value: 'name'},
-    {name: 'Price: Low to high', value: 'priceAsc'},
-    {name: 'Price: High to low', value: 'priceDesc'},
+    {name: 'Alfabetycznie', value: 'name'},
+    {name: 'Cena: najtańsza => najdroższa', value: 'priceAsc'},
+    {name: 'Cena: najdroższa => najtańsza', value: 'priceDesc'},
   ]
 
   constructor(private shopService: ShopService) { }
 
   ngOnInit() {
     this.getProducts();
-    this.getSizes();
+    this.getSystems();
     this.getTypes();
   }
   getProducts(){
@@ -41,9 +41,9 @@ export class ShopComponent implements OnInit {
       console.log(error);
     });
   }
-  getSizes(){
-    this.shopService.getSizes().subscribe(response =>{
-      this.sizes = [{id:0,size:'All'}, ...response];
+  getSystems(){
+    this.shopService.getSystems().subscribe(response =>{
+      this.systems = [{id:0,name:'All'}, ...response];
 
     }, error =>{
       console.log(error);
@@ -56,8 +56,8 @@ export class ShopComponent implements OnInit {
       console.log(error);
     });
   }
-  onSizeSelected(sizeId: number){
-    this.shopParams.sizeId=sizeId;
+  onSizeSelected(systemId: number){
+    this.shopParams.systemId=systemId;
     this.shopParams.pageNumber=1
     this.getProducts();
   }

@@ -14,6 +14,7 @@ import { CheckoutService } from '../checkout.service';
   styleUrls: ['./checkout-payment.component.scss']
 })
 export class CheckoutPaymentComponent implements OnInit {
+  [x: string]: any;
   @Input() checkoutForm: FormGroup;
 
   constructor(private basketService: BasketService, private checkoutService: CheckoutService, private toastr: ToastrService, private router: Router, private account: AccountService) { }
@@ -25,17 +26,18 @@ export class CheckoutPaymentComponent implements OnInit {
     const orderToCreate = this.getOrderToCreate(basket);
     console.log(orderToCreate);
     this.checkoutService.createOrder(orderToCreate).subscribe((order: IOrder) => {
-      this.toastr.success('Order created successfully');
+      this.toastr.success('Zamówienie zrealizowane pomyślnie');
       this.basketService.deleteLocalBasket(basket.id);
       console.log(order);
       const navigationExtras: NavigationExtras = {state: order};
-      this.router.navigate(['checkout/success'], navigationExtras);
+      this.router.navigate(['checkout/result'], navigationExtras);
     }, error => {
       this.toastr.error(error.message);
       console.log(error);
     });
 
 
+    
   }
     // createPayment(){
   //   return this.http.post(this.baseUrl+'payment/'+this.getCurrentBasketValue().id,{})
@@ -48,9 +50,12 @@ export class CheckoutPaymentComponent implements OnInit {
   //   );
   // }
   goToPayu(){
+
     this.checkoutService.createPayment(this.getOrderToCreate(this.basketService.getCurrentBasketValue())).subscribe((response: any) =>{
+     // this.document.location.href = response;
+     window.location.href=response;
       console.log(response);
-      window.open(response,"_blank");
+     //window.open(response);
 
     }, error =>{
       console.log(error);

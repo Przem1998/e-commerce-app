@@ -12,7 +12,7 @@ export interface IBasketItem {
     quantity: number;
     pictureUrl: string;
     productType: string;
-    productSize: string;
+    systemType: string;
 }
 export class Basket implements IBasket{
     id = uuidv4();

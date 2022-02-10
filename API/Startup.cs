@@ -9,6 +9,8 @@ using API.Middleware;
 using API.Extansions;
 using StackExchange.Redis;
 using Infrastructure.Identity;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Hosting;
 
 namespace API
 {
@@ -26,12 +28,11 @@ namespace API
         { 
             services.AddAutoMapper(typeof(MappingProfiles));
             services.AddControllers();
-            services.AddDbContext<StoreContext>(x=> x.UseSqlite(_config.GetConnectionString("DefaultConnection")));
-        
+            
+            services.AddDbContext<StoreContext>(x=> x.UseSqlServer(_config.GetConnectionString("DefaultConnection")));
             services.AddDbContext<AppIdentityDbContext>(x =>{
-                x.UseSqlite(_config.GetConnectionString("IdentityConnection"));
+                x.UseSqlServer(_config.GetConnectionString("DefaultConnection"));
             });
-
             services.AddSingleton<IConnectionMultiplexer>(c=>{
                 var configuration=ConfigurationOptions.Parse(_config.GetConnectionString("Redis"),
                 true);
@@ -55,9 +56,14 @@ namespace API
         {
             app.UseMiddleware<ExceptionMiddleware>(); //report exceptons
        
-         // if (env.IsDevelopment()) //development mode
-            // {
-            // }
+            if (env.IsDevelopment()) //development mode
+            {
+                app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                app.UseHsts();
+            }
             app.UseStatusCodePagesWithReExecute("/errors/{0}"); //middleware this move to error controller and return json result error 
             
             app.UseHttpsRedirection();
@@ -70,11 +76,15 @@ namespace API
             app.UseAuthentication();
             app.UseAuthorization();
             
+            
             app.UseSwaggerDocumentation();
             
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+            app.Run(async(context)=>{
+                await context.Response.WriteAsync("Could not find anything");
             });
         }
     }

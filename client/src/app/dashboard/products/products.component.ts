@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IProduct } from 'src/app/shared/models/product';
 import { IType } from 'src/app/shared/models/productType';
 import { ShopParams } from 'src/app/shared/models/shopParams';
-import { ISize } from 'src/app/shared/models/size';
+import { ISystemType } from 'src/app/shared/models/systemType';
 import { ShopService } from 'src/app/shop/shop.service';
 
 @Component({
@@ -14,7 +14,7 @@ export class ProductsComponent implements OnInit {
 
   constructor(private shopService: ShopService) { }
   products: IProduct[]; 
-  size: ISize[];
+  system: ISystemType[];
   type: IType[];
   shopParams= new ShopParams();
   totalCount:number;
@@ -24,6 +24,7 @@ export class ProductsComponent implements OnInit {
   getProducts(){
     this.shopService.getProducts(this.shopParams).subscribe(response=> {
       this.products=response.data;
+     
       this.shopParams.pageNumber=response.pageIndex;
       this.shopParams.pageSize=response.pageSize;
       this.totalCount=response.count;

@@ -1,1 +1,25 @@
-<p>add-product works!</p>
+<div class="container mt-5">
+    <div class="formContainer"  [formGroup]="productForm">
+        <div class="formDiv">
+            <div>
+                <div>
+                    <app-text-input [label]="'Nazwa produktu'" formControlName="productName"></app-text-input>
+                    <app-text-input [label]="'Cena'" formControlName="productPrice"></app-text-input>
+                </div>
+                
+                <textarea formControlName="description" placeholder="Opis produktu"></textarea>
+                <label>System instalacyjny<select  formControlName="systemType"><option *ngFor="let system of systems">{{system.name}}</option></select></label>
+                <label>Rodzaj <select formControlName="productType"><option *ngFor="let type of productTypes">{{type.name}}</option></select></label>
+            </div>
+            <div>
+                <img [src]="url">
+                <input type="file" accept=".png, .jpg, .jpeg" formControlName="pictureUrl" (change)="onFileSelectedListener($event)">
+            </div> 
+        </div>
+        <div><button>Dodaj produkt</button></div>  
+    </div>
+   
+</div>
+
+
+

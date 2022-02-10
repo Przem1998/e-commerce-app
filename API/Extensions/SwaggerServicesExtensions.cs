@@ -1,3 +1,4 @@
+using System.Linq;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
@@ -27,7 +28,6 @@ namespace API.Extansions
                 c.AddSecurityDefinition("Bearer", securitySchema);
                 var securityRequiremnt = new OpenApiSecurityRequirement{{securitySchema, new[]{"Bearer"}}};
                 c.AddSecurityRequirement(securityRequiremnt) ;
-    
             });
           
           return services;
@@ -35,7 +35,7 @@ namespace API.Extansions
         public static IApplicationBuilder UseSwaggerDocumentation(this IApplicationBuilder app)
         {
             app.UseSwagger();
-            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "API v1"));
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "PlumberShop"));
         
           return app;
         }

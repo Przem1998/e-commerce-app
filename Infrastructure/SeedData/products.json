@@ -5,7 +5,7 @@
     "Price": 2.15,
     "PictureUrl": "images/products/kolano.png",
     "ProductTypeId": 1,
-    "ProductSizeId": 2
+    "SystemTypeId": 2
   },
   {
     "Name": "Kolano ocynkowane",
@@ -13,7 +13,7 @@
     "Price": 2.59,
     "PictureUrl": "images/products/kolano.png",
     "ProductTypeId": 1,
-    "ProductSizeId": 3
+    "SystemTypeId": 2
   },
   {
     "Name": "Kolano ocynkowane",
@@ -21,7 +21,7 @@
     "Price": 4.39,
     "PictureUrl": "images/products/kolano.png",
     "ProductTypeId": 1,
-    "ProductSizeId": 4
+    "SystemTypeId": 2
   },
   {
     "Name": "Kolano ocynkowane",
@@ -29,7 +29,7 @@
     "Price": 8.4,
     "PictureUrl": "images/products/kolano.png",
     "ProductTypeId": 1,
-    "ProductSizeId": 5
+    "SystemTypeId": 2
   },
   {
     "Name": "kolano nyplowe ocynkowane",
@@ -37,7 +37,7 @@
     "Price": 2.7,
     "PictureUrl": "images/products/kolanoNyplowe.png",
     "ProductTypeId": 1,
-    "ProductSizeId": 1
+    "SystemTypeId": 2
   },
   {
     "Name": "kolano nyplowe ocynkowane",
@@ -45,7 +45,7 @@
     "Price": 8.7,
     "PictureUrl": "images/products/kolanoNyplowe.png",
     "ProductTypeId": 1,
-    "ProductSizeId": 5
+    "SystemTypeId": 2
   },
   {
     "Name": "Nypel ocynkowany",
@@ -53,7 +53,7 @@
     "Price": 10.5,
     "PictureUrl": "images/products/nypel.png",
     "ProductTypeId": 2,
-    "ProductSizeId": 7
+    "SystemTypeId": 2
   },
   {
     "Name": "Nypel mosiężny",
@@ -61,7 +61,7 @@
     "Price": 3,
     "PictureUrl": "images/products/nypelMosiezny.png",
     "ProductTypeId": 2,
-    "ProductSizeId": 2
+    "SystemTypeId": 1
   },
   {
     "Name": "Nypel mosiężny",
@@ -69,7 +69,7 @@
     "Price": 7.7,
     "PictureUrl": "images/products/nypelMosiezny.png",
     "ProductTypeId": 2,
-    "ProductSizeId": 4
+    "SystemTypeId": 2
   },
   {
     "Name": "Nypel mosiężny",
@@ -77,7 +77,7 @@
     "Price": 4.3,
     "PictureUrl": "images/products/nypelMosiezny.png",
     "ProductTypeId": 2,
-    "ProductSizeId": 3
+    "SystemTypeId": 2
   },
   {
     "Name": "Nypel ocynkowany",
@@ -85,7 +85,7 @@
     "Price": 6,
     "PictureUrl": "images/products/nypel.png",
     "ProductTypeId": 4,
-    "ProductSizeId": 4
+    "SystemTypeId": 2
   },
   {
     "Name": "Nypel ocynkowany",
@@ -93,7 +93,7 @@
     "Price": 5,
     "PictureUrl": "images/products/nypel.png",
     "ProductTypeId": 2,
-    "ProductSizeId": 3
+    "SystemTypeId": 2
   },
   {
     "Name": "Trójnik ocynkowany",
@@ -101,7 +101,7 @@
     "Price": 2.5,
     "PictureUrl": "images/products/trojnik.png",
     "ProductTypeId": 4,
-    "ProductSizeId": 2
+    "SystemTypeId": 2
   },
   {
     "Name": "Trójnik ocynkowany",
@@ -109,7 +109,7 @@
     "Price": 8.1,
     "PictureUrl": "images/products/trojnik.png",
     "ProductTypeId": 5,
-    "ProductSizeId": 4
+    "SystemTypeId": 2
   },
   {
     "Name": "Zawór kulowy",
@@ -117,7 +117,7 @@
     "Price": 59,
     "PictureUrl": "images/products/zaworKulowy.png",
     "ProductTypeId": 4,
-    "ProductSizeId": 6
+    "SystemTypeId": 1
   },
   {
     "Name": "Zawór grzybkowy",
@@ -125,7 +125,7 @@
     "Price": 100,
     "PictureUrl": "images/products/zaworGrzybkowy.png",
     "ProductTypeId": 4,
-    "ProductSizeId": 7
+    "SystemTypeId": 2
   },
   {
     "Name": "Rura ocynk",
@@ -133,7 +133,7 @@
     "Price": 19,
     "PictureUrl": "images/products/ruraOcynk.png",
     "ProductTypeId": 3,
-    "ProductSizeId": 4
+    "SystemTypeId": 2
   },
   {
     "Name": "Rura czarna",
@@ -141,6 +141,6 @@
     "Price": 7,
     "PictureUrl": "images/products/rura.png",
     "ProductTypeId": 3,
-    "ProductSizeId": 2
+    "SystemTypeId": 3
   }
 ]
