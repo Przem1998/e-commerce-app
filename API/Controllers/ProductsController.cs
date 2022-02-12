@@ -47,15 +47,10 @@ namespace API.Controllers
     public async Task<ActionResult<Pagination<ProductToReturnDtos>>> GetProducts([FromQuery]ProductSpecParams productParams)
     {
         var spec= new ProductsWithTypesAndSizesSpecification(productParams);
-    
         var countSpec= new ProductWithFiltersForCountSpecification(productParams);
-
         var totalItems = await _productsRepository.CountAsync(countSpec);
-
         var prodcuts = await _productsRepository.ListAsync(spec);
-
         var data = _mapper.Map<IReadOnlyList<Product>,IReadOnlyList<ProductToReturnDtos>>(prodcuts);
-
 
         return Ok(new Pagination<ProductToReturnDtos>(productParams.PageIndex,productParams.PageSize,totalItems,data));
     }

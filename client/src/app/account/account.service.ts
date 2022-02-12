@@ -21,9 +21,7 @@ export class AccountService {
   isLogginIn(){
     return !!localStorage.getItem('token');
   }
-  isLogginAdmin(){
-  
-  }
+
   loadCurrentUser(token: string){
     if(token === null){
       this.currentUserSource.next(null);

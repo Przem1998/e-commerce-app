@@ -1,5 +1,5 @@
 <div class="container mt-5">
-    <button routerLink="admin/products/add"  routerLinkActive="active">
+    <button routerLink="add"  routerLinkActive="active">
 Dodaj
     </button>
     <div class="row"> 
@@ -35,7 +35,7 @@ Dodaj
                             <td class="align-middle">{{item.name}}</td>
                             <td class="align-middle">{{item.price}}zł</td>  
                             <td class="align-middle">{{item.productType}}</td>
-                            <td class="align-middle"><button type="button">Usuń</button></td>
+                            <td class="align-middle"><button type="button" type="submit" (click)="removeProduct(item)">Usuń</button></td>
                             <td></td>
                         </tr>
                     </tbody>

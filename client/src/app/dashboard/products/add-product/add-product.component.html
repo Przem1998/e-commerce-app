@@ -1,23 +1,25 @@
 <div class="container mt-5">
-    <div class="formContainer"  [formGroup]="productForm">
+    <form class="formContainer" [formGroup]="productForm" (ngSubmit)="addProduct()">
         <div class="formDiv">
             <div>
-                <div>
+                <div class="productDef">
                     <app-text-input [label]="'Nazwa produktu'" formControlName="productName"></app-text-input>
-                    <app-text-input [label]="'Cena'" formControlName="productPrice"></app-text-input>
+                    <app-text-input [label]="'Cena brutto [zł]'" formControlName="productPrice"></app-text-input>
                 </div>
                 
-                <textarea formControlName="description" placeholder="Opis produktu"></textarea>
-                <label>System instalacyjny<select  formControlName="systemType"><option *ngFor="let system of systems">{{system.name}}</option></select></label>
-                <label>Rodzaj <select formControlName="productType"><option *ngFor="let type of productTypes">{{type.name}}</option></select></label>
-            </div>
+                <textarea class="description" formControlName="description" placeholder="Opis produktu"></textarea>
+                <div class="selection">
+                <label>System instalacyjny<select  formControlName="systemType"><option [value]="system.name" *ngFor="let system of systems">{{system.name}}</option></select></label>
+                <label>Rodzaj <select formControlName="productType"><option [value]="type.name" *ngFor="let type of productTypes">{{type.name}}</option></select></label>
+                </div>
+              </div>
             <div>
-                <img [src]="url">
+                <img [src]="url" width="250px">
                 <input type="file" accept=".png, .jpg, .jpeg" formControlName="pictureUrl" (change)="onFileSelectedListener($event)">
             </div> 
         </div>
-        <div><button>Dodaj produkt</button></div>  
-    </div>
+        <div><button type="submit"  class="btn btn-lg btn-primary">Dodaj produkt</button></div>  
+    </form>
    
 </div>
 

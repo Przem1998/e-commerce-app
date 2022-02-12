@@ -67,13 +67,8 @@ namespace API.Controllers
         }
 
 
-        public class FileUploadAPI
+        public class FileUpload
         {
-            public FileUploadAPI(IFormFile files)
-            {
-                this.Files = files;
-
-            }
             public IFormFile Files { get; set; }
         }
         [Authorize]
@@ -108,31 +103,33 @@ namespace API.Controllers
                 DisplayName = user.DisplayName
             };
         }
-        public async Task<string> UploadImage([FromForm] FileUploadAPI objFile)
+
+        [HttpPost("deployImage")]
+        public async Task<ActionResult> UploadImage([FromForm] FileUpload objFile)
         {
             try
             {
                 if (objFile.Files.Length > 0)
                 {
-                    if (!Directory.Exists(_environment.WebRootPath + "\\Images"))
+                    if (!Directory.Exists(_environment.WebRootPath + "/Images"))
                     {
-                        Directory.CreateDirectory(_environment.WebRootPath + "\\Images\\");
+                        Directory.CreateDirectory(_environment.WebRootPath + "/Images/");
                     }
-                    using (FileStream fileStream = System.IO.File.Create(_environment.WebRootPath + "\\Images\\products\\" + objFile.Files.FileName))
+                    using (FileStream fileStream = System.IO.File.Create(_environment.WebRootPath + "/Images/products/" + objFile.Files.FileName))
                     {
                         objFile.Files.CopyTo(fileStream);
                         fileStream.Flush();
-                        return "\\Images\\products" + objFile.Files.FileName;
+                        return Ok( "/Images/products/" + objFile.Files.FileName);
                     }
                 }
                 else
                 {
-                    return "Failed";
+                    return  NotFound();
                 }
             }
             catch (Exception e)
             {
-                return e.Message.ToString();
+                return BadRequest(e.Message.ToString());
             }
         }
         [HttpGet("allStatus")]
@@ -150,11 +147,18 @@ namespace API.Controllers
             return Ok(dto.Status);
         }
 
+    [HttpGet("productExists")]
+    public async Task<ActionResult<bool>> CheckProductExists([FromQuery] string product)
+    {
+        var products = await _productsRepository.ListAllAsync();
+          return products.Any(p => p.Name == product);    
+    } 
+    
     [HttpPost("addProduct")]
     public async Task<ActionResult<Product>> AddProduct(ProductDto dto)
     {
         var data = await _productsRepository.ListAllAsync();
-        var id = data.Count;
+        var id = data[data.Count-1].Id ;
         var productTypes= await _productTypesRepository.ListAllAsync();
         var systemTypes= await _productSystemTypesRepository.ListAllAsync();
         
@@ -170,9 +174,16 @@ namespace API.Controllers
             ProductTypeId=Convert.ToInt16(typeId[0])
 
         };
+        // try{
+            
         _unitOfWork.Repository<Product>().Add(product);
         var result = await _unitOfWork.Complete();
-        return Ok(await _productsRepository.GetByIdAsync(id+1));
+        // _productsRepository.Add(product);
+           return Ok("success");
+        // }
+        // catch(Exception e){return BadRequest(e);}
+       
+     
     }
         [HttpDelete("deleteProduct")]
         public async Task<ActionResult> DeleteProduct(int productId)

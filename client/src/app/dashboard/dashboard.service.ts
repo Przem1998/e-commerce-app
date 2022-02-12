@@ -29,4 +29,18 @@ export class DashboardService {
 getTypes(){
   return this.http.get<IType[]>(this.baseUrl+ 'products/types');
 }
+checkProductExists(product: string) {
+ return this.http.get<boolean>(this.baseUrl+'admin/productExists?product='+product);
+}
+addProduct(product:IProduct){
+  return this.http.post(this.baseUrl+'admin/addProduct',product);
+}
+removeProduct(product:IProduct){
+  return this.http.delete(this.baseUrl+'admin/deleteProduct?productId='+product.id);
+}
+
+deployImage(image:any){
+  return this.http.post('https://localhost:5001/api/admin/deployImage',image)
+}
+
 }
