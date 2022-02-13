@@ -71,17 +71,18 @@ namespace API.Controllers
         {
             public IFormFile Files { get; set; }
         }
-        [Authorize]
+       
         [HttpGet]
         public async Task<ActionResult<UserDto>> GetCurrentUser()
         {
-            // var email = User.FindFirstValue(ClaimTypes.Email);
             var user = await _userManager.FindByEmailFromClaimsPrinciple(HttpContext.User);
+            if(user== null) return new UserDto();
             return new UserDto
             {
                 Email = user.Email,
                 Token = _tokenService.CreateToken(user),
-                DisplayName = user.DisplayName
+                DisplayName = user.DisplayName,
+                Role=user.Role
             };
         }
 
@@ -100,7 +101,8 @@ namespace API.Controllers
             {
                 Email = user.Email,
                 Token = _tokenService.CreateToken(user),
-                DisplayName = user.DisplayName
+                DisplayName = user.DisplayName,
+                Role=user.Role
             };
         }
 

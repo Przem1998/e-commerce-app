@@ -1,7 +1,7 @@
 import { HttpClient, HttpHandler, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorSubject, of, ReplaySubject } from 'rxjs';
+import { BehaviorSubject, Observable, of, ReplaySubject, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { IAddress } from '../shared/models/address';
@@ -20,6 +20,26 @@ export class AccountService {
 
   isLogginIn(){
     return !!localStorage.getItem('token');
+  }
+  // isAdmin(): Observable<boolean>{
+  //   var hasPermission= new Subject<boolean>();
+  //   this.http.get('https://localhost:5001/api/admin').subscribe((res:boolean)=>{
+  //     hasPermission.next(res);
+  //   })
+  //   return hasPermission.asObservable
+  // }
+  getInfoAboutUser(){
+    return this.http.get(this.baseUrl+'admin');
+  }
+
+  loginAdmin(values:any){
+    return this.http.post(this.baseUrl + 'admin/login',values)
+    .pipe(
+      map((user: IUser) => {
+        localStorage.setItem('token',user.token);
+        this.currentUserSource.next(user);
+      })
+    );
   }
 
   loadCurrentUser(token: string){

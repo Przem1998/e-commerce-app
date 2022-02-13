@@ -8,12 +8,16 @@ import { SharedModule } from '../shared/shared.module';
 import { CoreModule } from '../core/core.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductsModule } from './products/products.module';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { AdminNavBarComponent } from './admin-nav-bar/admin-nav-bar.component';
 
 
 @NgModule({
   declarations: [
     DashboardComponent,
-    OrdersComponent
+    OrdersComponent,
+    AdminLoginComponent,
+    AdminNavBarComponent
   ],
   imports: [
     CommonModule,

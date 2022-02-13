@@ -14,6 +14,17 @@ export class DashboardService {
 
   constructor(private http: HttpClient) { }
 
+  isHaveAdminPermission(){
+    // this.currentUser$.subscribe(res=>{
+    //   if(res == null) return false;
+    //   if(res.role=="ADMIN") return true;
+    //   else return false;
+    // }, error =>{
+    //   console.log(error);
+    // })
+    
+  }
+
  getAllOrders(){
    return this.http.get(this.baseUrl+'order/allOrders');
  }

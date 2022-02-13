@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AccountService } from '../account/account.service';
 import { SharedModule } from '../shared/shared.module';
 
 @Component({
@@ -8,9 +9,10 @@ import { SharedModule } from '../shared/shared.module';
 })
 export class DashboardComponent implements OnInit {
  selectedOptionStatus:string
-  constructor() { }
+  constructor(private accountService: AccountService) { }
 
   ngOnInit(): void {
+  
   }
 
 }
