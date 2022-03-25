@@ -1,0 +1,19 @@
+.formContainer{
+    display: flex;
+    flex-direction: column;
+}
+.formDiv{
+    display: flex;
+}
+.productDef{
+    display: flex;
+    flex-direction: row;
+}
+.description{
+    width: 400px;
+    height: 150px;
+}
+.selection{
+    flex-wrap: wrap;
+    justify-content: space-between;
+}

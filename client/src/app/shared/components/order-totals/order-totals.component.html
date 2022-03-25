@@ -1,0 +1,20 @@
+<div class="bg-light px-4 py-3 text-uppercase font-weight-bold">
+   Podsumowanie zamówienia
+</div>
+<div class="p-4">
+    <p class="font-italic mb-4">Koszt wysyłki zostanie dodany w zależności od dokonanego wyboru</p>
+    <ul class="list-unstyled mb-4" *ngIf="(basketTotal$ | async)">
+         <li class="d-flex justify-content-between py-3 border-bottom">
+             <strong class="text-muted">Koszt wysyłki</strong>
+             <strong class="text-muted">{{NumerToFixTwo( (basketTotal$ | async).shipping)}} zł</strong>
+        </li>
+        <li class="d-flex justify-content-between py-3 border-bottom">
+            <strong class="text-muted">Order subtotal</strong>
+            <strong class="text-muted">{{NumerToFixTwo((basketTotal$ | async).subtotal)}} zł</strong>
+       </li>
+       <li class="d-flex justify-content-between py-3 border-bottom">
+        <strong class="text-muted">Suma</strong>
+        <strong class="text-muted">{{NumerToFixTwo((basketTotal$ | async).total)}} zł</strong>
+   </li>
+    </ul>
+</div>

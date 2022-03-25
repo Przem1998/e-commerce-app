@@ -1,0 +1,146 @@
+[
+  {
+    "Name": "Kolano ocynkowane 1/2 cala ",
+    "Description": "zastosowanie: instalacje hydrauliczne dla wody pitnej (plus innych cieczy nieagresywnych), układy centralnego ogrzewania, instalacje gazowe, także sprężonego powietrza (gazy nieagresywne), instalacje nawadniające, budownictwo i konstrukcje Przekrój : 1/2 cala",
+    "Price": 2.15,
+    "PictureUrl": "images/products/kolano.png",
+    "ProductTypeId": 1,
+    "SystemTypeId": 2
+  },
+  {
+    "Name": "Kolano ocynkowane 3/4 cala",
+    "Description": "zastosowanie: instalacje hydrauliczne dla wody pitnej (plus innych cieczy nieagresywnych), układy centralnego ogrzewania, instalacje gazowe, także sprężonego powietrza (gazy nieagresywne), instalacje nawadniające, budownictwo i konstrukcje Przekrój : 1/2 cala",
+    "Price": 2.59,
+    "PictureUrl": "images/products/kolano.png",
+    "ProductTypeId": 1,
+    "SystemTypeId": 2
+  },
+  {
+    "Name": "Kolano ocynkowane 1 cal",
+    "Description": "zastosowanie: instalacje hydrauliczne dla wody pitnej (plus innych cieczy nieagresywnych), układy centralnego ogrzewania, instalacje gazowe, także sprężonego powietrza (gazy nieagresywne), instalacje nawadniające, budownictwo i konstrukcje Przekrój : 1/2 cala",
+    "Price": 4.39,
+    "PictureUrl": "images/products/kolano.png",
+    "ProductTypeId": 1,
+    "SystemTypeId": 2
+  },
+  {
+    "Name": "Kolano ocynkowane 1/2 cala",
+    "Description": "zastosowanie: instalacje hydrauliczne dla wody pitnej (plus innych cieczy nieagresywnych), układy centralnego ogrzewania, instalacje gazowe, także sprężonego powietrza (gazy nieagresywne), instalacje nawadniające, budownictwo i konstrukcje Przekrój : 1/2 cala",
+    "Price": 8.4,
+    "PictureUrl": "images/products/kolano.png",
+    "ProductTypeId": 1,
+    "SystemTypeId": 2
+  },
+  {
+    "Name": "kolano nyplowe ocynkowane 1/2 cala",
+    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
+    "Price": 2.7,
+    "PictureUrl": "images/products/kolanoNyplowe.png",
+    "ProductTypeId": 1,
+    "SystemTypeId": 2
+  },
+  {
+    "Name": "kolano nyplowe ocynkowane 1 1/4 cala",
+    "Description": "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
+    "Price": 8.7,
+    "PictureUrl": "images/products/kolanoNyplowe.png",
+    "ProductTypeId": 1,
+    "SystemTypeId": 2
+  },
+  {
+    "Name": "Nypel ocynkowany 1 1/2 cala",
+    "Description": "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
+    "Price": 10.5,
+    "PictureUrl": "images/products/nypel.png",
+    "ProductTypeId": 2,
+    "SystemTypeId": 2
+  },
+  {
+    "Name": "Nypel mosiężny 1/2 cala",
+    "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
+    "Price": 3,
+    "PictureUrl": "images/products/nypelMosiezny.png",
+    "ProductTypeId": 2,
+    "SystemTypeId": 1
+  },
+  {
+    "Name": "Nypel mosiężny 1 cal",
+    "Description": "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
+    "Price": 7.7,
+    "PictureUrl": "images/products/nypelMosiezny.png",
+    "ProductTypeId": 2,
+    "SystemTypeId": 2
+  },
+  {
+    "Name": "Nypel mosiężny 3/4 cala",
+    "Description": "Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.",
+    "Price": 4.3,
+    "PictureUrl": "images/products/nypelMosiezny.png",
+    "ProductTypeId": 2,
+    "SystemTypeId": 2
+  },
+  {
+    "Name": "Nypel ocynkowany 1 cal",
+    "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
+    "Price": 6,
+    "PictureUrl": "images/products/nypel.png",
+    "ProductTypeId": 4,
+    "SystemTypeId": 2
+  },
+  {
+    "Name": "Nypel ocynkowany 3/4 cala",
+    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa.",
+    "Price": 5,
+    "PictureUrl": "images/products/nypel.png",
+    "ProductTypeId": 2,
+    "SystemTypeId": 2
+  },
+  {
+    "Name": "Trójnik ocynkowany 1/2 cala",
+    "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
+    "Price": 2.5,
+    "PictureUrl": "images/products/trojnik.png",
+    "ProductTypeId": 4,
+    "SystemTypeId": 2
+  },
+  {
+    "Name": "Trójnik ocynkowany 1 cal",
+    "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
+    "Price": 8.1,
+    "PictureUrl": "images/products/trojnik.png",
+    "ProductTypeId": 5,
+    "SystemTypeId": 2
+  },
+  {
+    "Name": "Zawór kulowy 3/4 cala",
+    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
+    "Price": 59,
+    "PictureUrl": "images/products/zaworKulowy.png",
+    "ProductTypeId": 4,
+    "SystemTypeId": 1
+  },
+  {
+    "Name": "Zawór grzybkowy 1 1/2 cala",
+    "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
+    "Price": 100,
+    "PictureUrl": "images/products/zaworGrzybkowy.png",
+    "ProductTypeId": 4,
+    "SystemTypeId": 2
+  },
+  {
+    "Name": "Rura ocynk 1/2 cala",
+    "Description": "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
+    "Price": 19,
+    "PictureUrl": "images/products/ruraOcynk.png",
+    "ProductTypeId": 3,
+    "SystemTypeId": 2
+  },
+  {
+    "Name": "Rura czarna 1/2 cala",
+    "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
+    "Price": 7,
+    "PictureUrl": "images/products/rura.png",
+    "ProductTypeId": 3,
+    "SystemTypeId": 3
+  }
+]

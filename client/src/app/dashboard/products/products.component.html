@@ -1,0 +1,109 @@
+
+    <header
+    class="d-flex flex-column flex-md-row align-items-center justify-content-between p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm fixed-top"  >
+    <img src="/assets/images/logo.png" style="max-height: 70px;" alt="logo" class="logo"  [routerLink]="['/']"  routerLinkActive="active">
+   
+    <div class="d-flex align-items-center">
+        
+        <ng-container *ngIf="(currentUser$ | async) === null">
+            <a routerLink="/account/signInAdmin" class="btn btn-outline-secondary mr-2" href="#">Zaloguj się </a>
+        </ng-container>
+        <ng-container *ngIf="(currentUser$ | async) as user">
+            <div class="dropdown ml-3 mr-5" dropdown>
+                <a class="dropdown-toggle" style="cursor: pointer;" dropdownToggle><strong>Witaj {{user.displayName}}</strong></a>
+                <div class="dropdown-menu dropdown-menu-right" style="cursor: pointer;" *dropdownMenu>
+                    <div class="dropdown-divider"></div>
+                    <a (click)="logout()" class="dropdown-item d-flex align-items-center py-2"><i class="fa fa-sign-out mr-3">Wyloguj się</i></a>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</header>
+
+<div class="positionElements">
+    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+        <div class="sidebar-sticky">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" href="admin">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                Panel administracyjny <span class="sr-only">(current)</span>
+             
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="admin/ordersCustomers">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
+                Zamówienia
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="products">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                Produkty
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="admin/categories">
+                <i class="fa fa-list-alt" aria-hidden="true"></i>
+                 Kategorie
+              </a>
+            </li>
+          </ul>
+  
+         
+        </div>
+      </nav>
+<div class="container mt-5">
+    <button routerLink="admin/products/add"  routerLinkActive="active">
+Dodaj nowy produkt
+    </button>
+    <div class="row"> 
+        <div class="col-8">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="border-0 bg-light">
+                                <div class="text-uppercase">Zdjęcie</div>
+                            </th>
+                            <th class="border-0 bg-light">
+                                <div class="text-uppercase">Nazwa</div>
+                            </th>
+                            <th class="border-0 bg-light">
+                                <div class="text-uppercase">Cena brutto</div>
+                            </th>
+                            <th class="border-0 bg-light">
+                                <div class="text-uppercase">Kategoria</div>
+                            </th>
+                            <th class="border-0 bg-light">
+                                <div class="text-uppercase">System</div>
+                            </th>
+                            <th class="border-0 bg-light">
+                                <div class="text-uppercase">Usuń</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of products">
+                            <td><img src="{{item.pictureUrl}}" alt="{{item.name}}" class="img-fluid" style="max-width: 150px;"></td>
+                            <td class="align-middle">{{item.name}}</td>
+                            <td class="align-middle">{{NumerToFixTwo(item.price)}}zł</td>  
+                            <td class="align-middle">{{item.productType}}</td>
+                            <td class="align-middle">{{item.systemType}}</td>
+                            <td class="align-middle"><button type="button" type="submit" (click)="removeProduct(item)">Usuń</button></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="d-flex justify-content-center" *ngIf="(this.totalCount > 0 )">
+                    <app-pager
+                        [pageSize]="shopParams.pageSize"
+                        [totalCount]="totalCount"
+                        (pageChanged)="onPageChanged($event)"
+                    ></app-pager>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

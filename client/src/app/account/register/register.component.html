@@ -1,0 +1,31 @@
+<div class="d-flex justify-content-center mt-5">
+    <div class="col">
+         <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="formInputs">
+                <app-text-input  formControlName="email" [label]="'Adres e-mail'"></app-text-input>
+                <app-text-input  formControlName="password" [label]="'Hasło'" [type]="'password'"></app-text-input>
+                <!-- <app-text-input  formControlName="repeatPassword" [label]="'Powtórz hasło'" [type]="'password'"></app-text-input> -->
+                
+                <app-text-input  formControlName="firstName" [label]="'Imię'"></app-text-input>
+                <app-text-input  formControlName="surname" [label]="'Nazwisko'"></app-text-input>
+
+                <div class="street_numbers">
+                    <app-text-input class="street" formControlName="street" [label]="'Ulica'" ></app-text-input>
+                    <app-text-input class="houseNumber" formControlName="houseNumber" [label]="'Nr domu'"></app-text-input>
+                    <app-text-input class="apartmentNumber" formControlName="apartmentNumber" [label]="'Nr lokalu'"></app-text-input>
+                </div>
+                <div class="city_postcode">
+                    <app-text-input class="city" formControlName="city" [label]="'Miejscowość'"></app-text-input>
+                    <app-text-input  class="postcode" formControlName="postcode" [label]="'Kod pocztowy'"></app-text-input>
+                </div>
+              
+                <app-text-input  formControlName="phoneNumber" [label]="'Numer telefonu'"></app-text-input>
+            </div>
+                <ul class="text-danger list-unstyled" *ngIf="errors">
+                    <li *ngFor="let error of errors">{{error}}</li>
+                </ul>
+             <button  class="btn btn-lg btn-primary btn-block" type="submit">Zarejestruj się</button>
+         </form>
+    </div>
+ </div>
+ 

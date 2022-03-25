@@ -1,0 +1,24 @@
+<div class="form-label-group">
+    <input [ngClass]= "(controlDir && controlDir.control && controlDir.control.touched) ? !controlDir.control.valid ? 'is-invalid' : 'is-valid' : null"
+           [type]="type"
+           (input)="onChange($event.target.value)"
+           (blur)="onTouched()"
+           #input
+           class="form-control" 
+           placeholder="{{label}}"
+    >
+    <div *ngIf="controlDir && controlDir.control && controlDir.control.status === 'PENDING'" class="fa fa-spinner fa-spin loader"></div>
+    <div class="invalid-feedback" *ngIf="(controlDir && controlDir.control && !controlDir.control.valid && controlDir.control.touched)">
+        <span  *ngIf="controlDir.control.errors?.required">Pusta kontrolka {{label}}</span>
+        <span *ngIf="controlDir.control.errors?.pattern">Niewłaściwe {{label}}</span>
+    </div>
+    <div class="invalid-feedback d-block" 
+    *ngIf="(controlDir && controlDir.control 
+            && !controlDir.control.valid 
+            && controlDir.control.touched 
+            && controlDir.control.dirty)">
+        <span *ngIf="controlDir.control.errors?.emailExists"> Ten email jest już używany</span>
+        <span *ngIf="controlDir.control.errors?.productExists"> Ten produkt już istnieje</span>
+    </div>
+</div>  
+

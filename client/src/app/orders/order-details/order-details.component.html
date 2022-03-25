@@ -1,0 +1,61 @@
+
+<div class="container mt-5">
+    <div class="row" *ngIf="order"> 
+        <div class="col-8">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="border-0 bg-light">
+                                <div class="text-uppercase">Produkt</div>
+                            </th>
+                            <th class="border-0 bg-light">
+                                <div class="text-uppercase">Cena</div>
+                            </th>
+                            <th class="border-0 bg-light">
+                                <div class="text-uppercase">Ilość</div>
+                            </th>
+                            <th class="border-0 bg-light">
+                                <div class="text-uppercase">Suma</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of order.orderItems">
+                            <th class="row">
+                                <div class="p-2">
+                                    <img src="{{item.pictureUrl}}" alt="{{item.name}}" class="img-fluid" style="max-width: 150px;">
+                                    <div class="ml-3 d-inline-block align-middle"><h5 class="mb-0">{{item.name}}</h5></div>
+                                </div>
+                            </th>
+                            <td class="align-middle">{{NumerToFixTwo(item.price)}} zł</td>
+                            <td class="align-middle">{{item.quantity}}</td>  
+                            <td class="align-middle">{{NumerToFixTwo (item.price*item.quantity)}}zł</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="bg-light px-4 py-3 text-uppercase font-weight-bold">Podsumowanie zamówienia
+
+                <ul class="list-unstyled mb-4">
+                    <li class="d-flex justify-content-between py-3 border-bottom">
+                        <strong class="text-muted">Koszt wysyłki</strong>
+                        <strong class="text-muted">{{NumerToFixTwo( order.shippingPrice)}} zł</strong>
+                   </li>
+                   <li class="d-flex justify-content-between py-3 border-bottom">
+                       <strong class="text-muted">Koszt towaru</strong>
+                       <strong class="text-muted">{{NumerToFixTwo(order.subtotal)}} zł</strong>
+                  </li>
+                  <li class="d-flex justify-content-between py-3 border-bottom">
+                   <strong class="text-muted">Suma</strong>
+                   <strong class="text-muted">{{NumerToFixTwo(order.subtotal + order.shippingPrice)}} zł</strong>
+              </li>
+               </ul>
+
+            </div>
+            
+        </div>
+    </div>
+</div>

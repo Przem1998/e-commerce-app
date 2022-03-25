@@ -1,0 +1,76 @@
+<header
+class="d-flex flex-column flex-md-row align-items-center justify-content-between p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm fixed-top"  >
+<img src="/assets/images/logo.png" style="max-height: 70px;" alt="logo" class="logo"  [routerLink]="['/']"  routerLinkActive="active">
+
+<div class="d-flex align-items-center">
+    <ng-container *ngIf="(currentUser$ | async) as user">
+        <div class="dropdown ml-3 mr-5" dropdown>
+            <a class="dropdown-toggle" style="cursor: pointer;" dropdownToggle><strong>Witaj {{user.displayName}}</strong></a>
+            <div class="dropdown-menu dropdown-menu-right" style="cursor: pointer;" *dropdownMenu>
+                <div class="dropdown-divider"></div>
+                <a (click)="logout()" class="dropdown-item d-flex align-items-center py-2"><i class="fa fa-sign-out mr-3">Wyloguj się</i></a>
+            </div>
+        </div>
+    </ng-container>
+</div>
+</header>
+<div class="container mt-5">
+    <div class="row" *ngIf="order"> 
+        <div class="col-8">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="border-0 bg-light">
+                                <div class="text-uppercase">Produkt</div>
+                            </th>
+                            <th class="border-0 bg-light">
+                                <div class="text-uppercase">Cena</div>
+                            </th>
+                            <th class="border-0 bg-light">
+                                <div class="text-uppercase">Ilość</div>
+                            </th>
+                            <th class="border-0 bg-light">
+                                <div class="text-uppercase">Suma</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of order.orderItems">
+                            <th class="row">
+                                <div class="p-2">
+                                    <img src="{{item.pictureUrl}}" alt="{{item.name}}" class="img-fluid" style="max-width: 150px;">
+                                    <div class="ml-3 d-inline-block align-middle"><h5 class="mb-0">{{item.name}}</h5></div>
+                                </div>
+                            </th>
+                            <td class="align-middle">{{NumerToFixTwo( item.price)}} zł</td>
+                            <td class="align-middle">{{item.quantity}}</td>  
+                            <td class="align-middle">{{NumerToFixTwo( item.price*item.quantity)}}zł</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="bg-light px-4 py-3 text-uppercase font-weight-bold">Podsumowanie zamówienia
+
+                <ul class="list-unstyled mb-4">
+                    <li class="d-flex justify-content-between py-3 border-bottom">
+                        <strong class="text-muted">Koszt wysyłki</strong>
+                        <strong class="text-muted">{{NumerToFixTwo( order.shippingPrice)}} zł</strong>
+                   </li>
+                   <li class="d-flex justify-content-between py-3 border-bottom">
+                       <strong class="text-muted">Koszt towaru</strong>
+                       <strong class="text-muted">{{NumerToFixTwo( order.subtotal)}} zł</strong>
+                  </li>
+                  <li class="d-flex justify-content-between py-3 border-bottom">
+                   <strong class="text-muted">Suma</strong>
+                   <strong class="text-muted">{{ NumerToFixTwo( order.subtotal + order.shippingPrice)}} zł</strong>
+              </li>
+               </ul>
+
+            </div>
+            
+        </div>
+    </div>
+</div>

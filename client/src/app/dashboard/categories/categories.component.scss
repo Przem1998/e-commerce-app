@@ -1,0 +1,26 @@
+.categoriesGroup{
+    display: flex;
+justify-content: space-around;
+height: 50vh;
+}
+.systemTypes{
+width: 20%;
+}
+.productTypes{
+width: 20%;
+}
+nav{
+    height: 77vh;
+}
+.list-group-item{
+    display: flex;
+    justify-content: space-between;
+}
+.addProductType, .addSystemType{
+   display: flex;
+   justify-content: space-between;
+
+}
+input[type=text] {
+    width: 100%;
+}

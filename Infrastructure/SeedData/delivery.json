@@ -1,0 +1,30 @@
+[
+  {
+    "Id": 1,
+    "ShortName": "DHL",
+    "Description": " ",
+    "DeliveryTime": "1-2 Dni",
+    "Price": 14
+  },
+  {
+    "Id": 2,
+    "ShortName": "Pocztex",
+    "Description": " ",
+    "DeliveryTime": "2-4 Dni",
+    "Price": 10
+  },
+  {
+    "Id": 3,
+    "ShortName": "UPS",
+    "Description": " ",
+    "DeliveryTime": "2-3 Days",
+    "Price": 12
+  },
+  {
+    "Id": 4,
+    "ShortName": "FEDEX",
+    "Description": " ",
+    "DeliveryTime": "3-4 Dni",
+    "Price": 10
+  }
+]
